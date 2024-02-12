@@ -1,64 +1,57 @@
 <!DOCTYPE html>
-<html>
+<html lang=en-US class=no-js>
 <head>
-<meta charset="utf-8">
-<title>{{ displayData.meta.title }}</title>
-<!-- Stylesheets -->
-<link href="{{ domainData.SITE_WEB }}/{{ domainData.SITE_TEMPLATE_DIR }}css/bootstrap.css" rel="stylesheet">
-<link href="{{ domainData.SITE_WEB }}/{{ domainData.SITE_TEMPLATE_DIR }}css/main.css" rel="stylesheet">
-<link href="{{ domainData.SITE_WEB }}/{{ domainData.SITE_TEMPLATE_DIR }}css/responsive.css" rel="stylesheet">
+    <meta charset=UTF-8>
+    <meta name=viewport content="width=device-width, initial-scale=1">
 
-<link rel="shortcut icon" href="{{ domainData.SITE_WEB }}/{{ domainData.SITE_TEMPLATE_DIR }}images/favicon.png" type="image/x-icon">
-<link rel="icon" href="{{ domainData.SITE_WEB }}/{{ domainData.SITE_TEMPLATE_DIR }}images/favicon.png" type="image/x-icon">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <title>{{ displayData.meta.title }}</title>
 
-<!-- Responsive -->
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 
-<!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
-<!--[if lt IE 9]><script src="{{ domainData.SITE_WEB }}/{{ domainData.SITE_TEMPLATE_DIR }}js/respond.js"></script><![endif]-->
+    <link rel=stylesheet href='{{ domainData.SITE_WEB }}/{{ domainData.SITE_TEMPLATE_DIR }}plugins/goodlayers-core/plugins/combine/style.css' type=text/css media=all>
+    <link rel=stylesheet href='{{ domainData.SITE_WEB }}/{{ domainData.SITE_TEMPLATE_DIR }}plugins/goodlayers-core/include/css/page-builder.css' type=text/css media=all>
+    <link rel=stylesheet href='{{ domainData.SITE_WEB }}/{{ domainData.SITE_TEMPLATE_DIR }}plugins/revslider/public/assets/css/settings.css' type=text/css media=all>
+    <link rel=stylesheet href='{{ domainData.SITE_WEB }}/{{ domainData.SITE_TEMPLATE_DIR }}plugins/zilla-likes/styles/zilla-likes.css' type=text/css media=all>
+    <link rel=stylesheet href='{{ domainData.SITE_WEB }}/{{ domainData.SITE_TEMPLATE_DIR }}css/style-core.css' type=text/css media=all>
+    <link rel=stylesheet href='{{ domainData.SITE_WEB }}/{{ domainData.SITE_TEMPLATE_DIR }}css/akea-style-custom.css' type=text/css media=all>
+
+
+    <link rel=stylesheet href='https://fonts.googleapis.com/css?family=Poppins%3A400%2C500%2C600%2C700%2C800' type=text/css media=all>
+    <link rel=stylesheet href='https://fonts.googleapis.com/css?family=Montserrat' type=text/css media=all>
+    <link rel=stylesheet href='https://fonts.googleapis.com/css?family=PT+Serif' type=text/css media=all>
+    <link rel=stylesheet href='https://fonts.googleapis.com/css?family=Open+Sans' type=text/css media=all>
+    <link rel=stylesheet href='https://fonts.googleapis.com/css?family=Poppins%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2Cregular%2Citalic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CMontserrat%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2Cregular%2Citalic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CPT+Serif%3Aregular%2Citalic%2C700%2C700italic%7COpen+Sans%3A300%2C300italic%2Cregular%2Citalic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic&amp;subset=latin%2Clatin-ext%2Cdevanagari%2Ccyrillic-ext%2Cvietnamese%2Ccyrillic%2Cgreek-ext%2Cgreek' type=text/css media=all>
+
+
 </head>
 
-<body>
+<body class="home page-template-default page page-id-2039 gdlr-core-body woocommerce-no-js akea-body akea-body-front akea-full  akea-with-sticky-navigation  akea-blockquote-style-1 gdlr-core-link-to-lightbox" data-home-url=index.html>
+<div class=akea-mobile-header-wrap>
+    <div class="akea-mobile-header akea-header-background akea-style-slide akea-sticky-mobile-navigation " id=akea-mobile-header>
+        <div class="akea-mobile-header-container akea-container clearfix">
+            <div class="akea-logo  akea-item-pdlr">
+                <div class=akea-logo-inner>
+                    <a class href=index.html><img src={{ domainData.SITE_WEB }}/{{ domainData.SITE_TEMPLATE_DIR }}upload/logo-2-1.png alt width=140 height=33 title=logo-2></a>
+                </div>
+            </div>
+            <div class=akea-mobile-menu-right>
+                <div class=akea-main-menu-search id=akea-mobile-top-search><i class="fa fa-search"></i></div>
+                <div class=akea-top-search-wrap>
+                    <div class=akea-top-search-close></div>
+                    <div class=akea-top-search-row>
+                        <div class=akea-top-search-cell>
+                            <form role=search method=get class=search-form action=#>
+                            <input type=text class="search-field akea-title-font" placeholder=Search... value name=s>
+                            <div class=akea-top-search-submit><i class="fa fa-search"></i></div>
+                            <input type=submit class=search-submit value=Search>
+                            <div class=akea-top-search-close><i class=icon_close></i></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
 
-<div class="page-wrapper">
- 	
-    <!-- Preloader -->
-    <div class="preloader"></div>
- 	
-    <!-- Main Header / Header Style Two -->
-    <header class="main-header header-style-two">
-    {% include 'inc/navig.twig' %}	
-    </header>
-    <!--End Main Header -->
-{% block obsah %}
-{% endblock %}
-    	<!-- Main Footer -->
-    <footer class="main-footer style-two">
-        {% include 'inc/foot.twig' %}		
-	</footer>
-	<!-- End Main Footer -->
-	
+{% include 'inc/navig.twig' %}	
+<div class=akea-page-wrapper id=akea-page-wrapper>
+{% block obsah %}{% endblock %}
 </div>
-<!--End pagewrapper-->
-
-<!-- Scroll To Top -->
-<div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-arrow-circle-up"></span></div>
-
-<script src="{{ domainData.SITE_WEB }}/{{ domainData.SITE_TEMPLATE_DIR }}js/jquery.js"></script>
-<script src="{{ domainData.SITE_WEB }}/{{ domainData.SITE_TEMPLATE_DIR }}js/popper.min.js"></script>
-<script src="{{ domainData.SITE_WEB }}/{{ domainData.SITE_TEMPLATE_DIR }}js/bootstrap.min.js"></script>
-<script src="{{ domainData.SITE_WEB }}/{{ domainData.SITE_TEMPLATE_DIR }}js/jquery.mCustomScrollbar.concat.min.js"></script>
-<script src="{{ domainData.SITE_WEB }}/{{ domainData.SITE_TEMPLATE_DIR }}js/jquery.fancybox.js"></script>
-<script src="{{ domainData.SITE_WEB }}/{{ domainData.SITE_TEMPLATE_DIR }}js/appear.js"></script>
-<script src="{{ domainData.SITE_WEB }}/{{ domainData.SITE_TEMPLATE_DIR }}js/owl.js"></script>
-<script src="{{ domainData.SITE_WEB }}/{{ domainData.SITE_TEMPLATE_DIR }}js/wow.js"></script>
-<script src="{{ domainData.SITE_WEB }}/{{ domainData.SITE_TEMPLATE_DIR }}js/knob.js"></script>
-<script src="{{ domainData.SITE_WEB }}/{{ domainData.SITE_TEMPLATE_DIR }}js/element-in-view.js"></script>
-<script src="{{ domainData.SITE_WEB }}/{{ domainData.SITE_TEMPLATE_DIR }}js/jquery-ui.js"></script>
-<script src="{{ domainData.SITE_WEB }}/{{ domainData.SITE_TEMPLATE_DIR }}js/script.js"></script>
-
-</body>
-</html>
+{% include 'inc/foot.twig' %}		
