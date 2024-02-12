@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ pageData.categoryInfo.title }}</title>
+    <meta
+</head>
+<body>
+    <h1>{{ pageData.categoryInfo.title }}</h1>
+    {% if userData.email %}
+    Uživatel: {{ userData.email }}; <a href="{{ domainData.SITE_WEB }}/doLogOut">Odhlásit</a>
+{% else %}
+    {% include 'inc/logForm.twig' %}
+   
+{% endif %}
+    <navigation>{{ navigation|raw }}</navigation>
+    <content>
+    <ul>
+    {% for item in displayData %}
+        <li>Název: {{ item.title }}, Snippet: {{ item.snippet }}, URL: <a href="http://{{ item.domain }}{{ item.url }}">http://{{ item.domain }}{{ item.url }}</a></li>
+    {% endfor %}
+</ul>
+
+    </content>
+<content>
+{% include 'inc/regForm.twig' %}
+</content>
+</body>
+</html>

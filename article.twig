@@ -1,0 +1,16 @@
+{% extends "index.twig" %}
+{% block title %}{{ displayData.meta.title }}{% endblock %}
+{% block description %}{{ displayData.meta.description }}{% endblock %}
+{% block keywords %}{{ displayData.meta.keywords }}{% endblock %}
+{% block SITE_LANGUAGE %}{{ domainData.SITE_LANGUAGE }}{% endblock %}
+{% block SITE_HEAD_CODE %}{{ domainData.SITE_HEAD_CODE }}{% endblock %}
+{% block SITE_POST_BODY_CODE %}{{ domainData.SITE_POST_BODY_CODE }}{% endblock %}
+{% block SITE_PRE_END_BODY_CODE %}{{ domainData.SITE_PRE_END_BODY_CODE }}{% endblock %}
+
+
+{% block nadpis %}{{ displayData.title }}{% endblock %}
+
+
+{% block obsah %}
+{{  displayData.body|raw }}
+{% endblock %}

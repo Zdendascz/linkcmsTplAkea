@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>{{ displayData.meta.title }}</title>
+<!-- Stylesheets -->
+<link href="{{ domainData.SITE_WEB }}/{{ domainData.SITE_TEMPLATE_DIR }}css/bootstrap.css" rel="stylesheet">
+<link href="{{ domainData.SITE_WEB }}/{{ domainData.SITE_TEMPLATE_DIR }}css/main.css" rel="stylesheet">
+<link href="{{ domainData.SITE_WEB }}/{{ domainData.SITE_TEMPLATE_DIR }}css/responsive.css" rel="stylesheet">
+
+<link rel="shortcut icon" href="{{ domainData.SITE_WEB }}/{{ domainData.SITE_TEMPLATE_DIR }}images/favicon.png" type="image/x-icon">
+<link rel="icon" href="{{ domainData.SITE_WEB }}/{{ domainData.SITE_TEMPLATE_DIR }}images/favicon.png" type="image/x-icon">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+<!-- Responsive -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+<!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+<!--[if lt IE 9]><script src="{{ domainData.SITE_WEB }}/{{ domainData.SITE_TEMPLATE_DIR }}js/respond.js"></script><![endif]-->
+</head>
+
+<body>
+
+<div class="page-wrapper">
+ 	
+    <!-- Preloader -->
+    <div class="preloader"></div>
+ 	
+    <!-- Main Header / Header Style Two -->
+    <header class="main-header header-style-two">
+    {% include 'inc/navig.twig' %}	
+    </header>
+    <!--End Main Header -->
+{% block obsah %}
+{% endblock %}
+    	<!-- Main Footer -->
+    <footer class="main-footer style-two">
+        {% include 'inc/foot.twig' %}		
+	</footer>
+	<!-- End Main Footer -->
+	
+</div>
+<!--End pagewrapper-->
+
+<!-- Scroll To Top -->
+<div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-arrow-circle-up"></span></div>
+
+<script src="{{ domainData.SITE_WEB }}/{{ domainData.SITE_TEMPLATE_DIR }}js/jquery.js"></script>
+<script src="{{ domainData.SITE_WEB }}/{{ domainData.SITE_TEMPLATE_DIR }}js/popper.min.js"></script>
+<script src="{{ domainData.SITE_WEB }}/{{ domainData.SITE_TEMPLATE_DIR }}js/bootstrap.min.js"></script>
+<script src="{{ domainData.SITE_WEB }}/{{ domainData.SITE_TEMPLATE_DIR }}js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="{{ domainData.SITE_WEB }}/{{ domainData.SITE_TEMPLATE_DIR }}js/jquery.fancybox.js"></script>
+<script src="{{ domainData.SITE_WEB }}/{{ domainData.SITE_TEMPLATE_DIR }}js/appear.js"></script>
+<script src="{{ domainData.SITE_WEB }}/{{ domainData.SITE_TEMPLATE_DIR }}js/owl.js"></script>
+<script src="{{ domainData.SITE_WEB }}/{{ domainData.SITE_TEMPLATE_DIR }}js/wow.js"></script>
+<script src="{{ domainData.SITE_WEB }}/{{ domainData.SITE_TEMPLATE_DIR }}js/knob.js"></script>
+<script src="{{ domainData.SITE_WEB }}/{{ domainData.SITE_TEMPLATE_DIR }}js/element-in-view.js"></script>
+<script src="{{ domainData.SITE_WEB }}/{{ domainData.SITE_TEMPLATE_DIR }}js/jquery-ui.js"></script>
+<script src="{{ domainData.SITE_WEB }}/{{ domainData.SITE_TEMPLATE_DIR }}js/script.js"></script>
+
+</body>
+</html>

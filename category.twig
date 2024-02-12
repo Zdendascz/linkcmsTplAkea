@@ -1,0 +1,9 @@
+{% extends "index.twig" %}
+{% block title %}{{ pageData.categoryInfo.title }}{% endblock %}
+{% block description %}{{ pageData.categoryInfo.description }}{% endblock %}
+{% block nadpis %}{{ displayData.title }}{% endblock %}
+
+
+{% block obsah %}
+{{  displayData.body }}
+{% endblock %}
