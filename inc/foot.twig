@@ -142,7 +142,36 @@
 <script src='{{ domainData.SITE_WEB }}/{{ domainData.SITE_TEMPLATE_DIR }}plugins/goodlayers-core/include/js/page-builder.js'></script>
 <script src='{{ domainData.SITE_WEB }}/{{ domainData.SITE_TEMPLATE_DIR }}js/jquery/ui/effect.min.js'></script>
 <script src='{{ domainData.SITE_WEB }}/{{ domainData.SITE_TEMPLATE_DIR }}js/script-core.js'></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Definice fragmentu kódu, který chceme vložit
+    var newMenuItemHtml = `<li class="akea-center-nav-menu-item">
+                                <div class="akea-above-logo">
+                                    <a href="index.html"><img src="https://doctetese.cz/templates/doctetese.cz/upload/logo-1-1.png" alt="" width="348" height="252" title="logo-1"></a>
+                                </div>
+                                <div class="akea-logo akea-item-pdlr">
+                                    <div class="akea-logo-inner">
+                                        <a href="index.html"><img src="https://doctetese.cz/templates/doctetese.cz/upload/logo-2-1.png" alt="" width="140" height="33" title="logo-2"></a>
+                                    </div>
+                                </div>
+                            </li>`;
 
+    // Získání reference na menu, ve kterém chceme vložit nový prvek
+    var menu = document.querySelector('.sf-menu');
+
+    // Vytvoření nového elementu (li) z HTML fragmentu
+    var newMenuItem = document.createElement('li');
+    newMenuItem.innerHTML = newMenuItemHtml;
+
+    // Najdeme pozici, na kterou chceme nový element vložit
+    // (Předpokládáme, že chceme vložit po třetím prvku, tedy na index 3, protože indexace začíná od 0)
+    var insertPosition = menu.children[3];
+
+    // Vložení nového prvku do menu před zadanou pozicí
+    menu.insertBefore(newMenuItem, insertPosition);
+});
+
+</script>
 
 </body>
 </html>
