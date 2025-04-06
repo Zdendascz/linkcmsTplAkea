@@ -381,8 +381,8 @@ body.akea-boxed .akea-body-wrapper, .gdlr-core-page-builder .gdlr-core-page-buil
 .akea-page-title-wrap .akea-page-title-top-gradient{ background: -webkit-linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)); background: -o-linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)); background: -moz-linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)); background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)); }.akea-page-title-wrap .akea-page-title-bottom-gradient{ background: -webkit-linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)); background: -o-linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)); background: -moz-linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)); background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)); } 
 .akea-body, .akea-body span.wpcf7-not-valid-tip{ color: #787878; } 
 .akea-body h1, .akea-body h2, .akea-body h3, .akea-body h4, .akea-body h5, .akea-body h6{ color: #383838; }.woocommerce table.shop_attributes th, .woocommerce table.shop_table th, .single-product.woocommerce div.product .product_meta .akea-head{ color: #383838; } 
-.akea-body a{ color: #ec6a2a; } 
-.akea-body a:hover{ color: #ed9468; } 
+.akea-body a{ color: #ec6a2a; text-decoration: underline; } 
+.akea-body a:hover{ color: #963809; } 
 .akea-body *{ border-color: #e6e6e6; }.akea-body .gdlr-core-portfolio-single-nav-wrap{ border-color: #e6e6e6; }.gdlr-core-columnize-item .gdlr-core-columnize-item-content{ column-rule-color: #e6e6e6; -moz-column-rule-color: #e6e6e6; -webkit-column-rule-color: #e6e6e6; } 
 .akea-body input, .akea-body textarea{ background-color: #ffffff; } 
 .akea-body input, .akea-body textarea{ border-color: #d7d7d7; } 

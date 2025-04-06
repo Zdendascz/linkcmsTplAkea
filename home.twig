@@ -1,7 +1,24 @@
 {% extends "index.twig" %}
-{% block title %}{{ displayData.meta.title }}{% endblock %}
-{% block description %}{{ displayData.meta.description }}{% endblock %}
-{% block keywords %}{{ displayData.meta.keywords }}{% endblock %}
+{% block title %}{{ pageData.categoryInfo.meta.title }}{% endblock %}
+{% block description %}{{ pageData.categoryInfo.meta.description }}{% endblock %}
+{% block keywords %}{{ pageData.categoryInfo.meta.keywords }}{% endblock %}
+
+{% block author %}{{ domainData.domain.meta_autor }}{% endblock %}
+
+{% block og_title %}{{ pageData.categoryInfo.meta.title }}{% endblock %}
+{% block og_description %}{{ pageData.categoryInfo.meta.description }}{% endblock %}
+{% block og_image %}{{ domainData.domain.meta_og_img }}{% endblock %}
+{% block og_url %}{{ actualUrl }}{% endblock %}
+{% block og_content_type %}website{% endblock %}
+
+{% block twitter_account %}{{ domainData.domain.twitter_account }}{% endblock %}
+{% block twitter_type %}summary_large_image{% endblock %}
+{% block twitter_title %}{{ pageData.categoryInfo.meta.title }}{% endblock %}
+{% block twitter_image %}{{ domainData.domain.meta_og_img }}{% endblock %}
+{% block twitter_description %}{{ pageData.categoryInfo.meta.description }}{% endblock %}
+
+
+
 {% block SITE_LANGUAGE %}{{ domainData.SITE_LANGUAGE }}{% endblock %}
 {% block SITE_HEAD_CODE %}{{ domainData.SITE_HEAD_CODE }}{% endblock %}
 {% block SITE_POST_BODY_CODE %}{{ domainData.SITE_POST_BODY_CODE }}{% endblock %}
@@ -36,342 +53,28 @@
                                 <div class=gdlr-core-pbf-element>
                                     <div class="gdlr-core-blog-item gdlr-core-item-pdb clearfix  gdlr-core-style-blog-full">
                                         <div class="gdlr-core-blog-item-holder gdlr-core-js-2 clearfix" data-layout=fitrows>
-                                            <div class="gdlr-core-item-list gdlr-core-blog-full  gdlr-core-item-mglr gdlr-core-style-left">
-                                                <div class="gdlr-core-blog-thumbnail-wrap clearfix">
-                                                    <div class="gdlr-core-blog-thumbnail gdlr-core-media-image  gdlr-core-opacity-on-hover gdlr-core-zoom-on-hover">
-                                                        <a href=#><img src={{ domainData.SITE_WEB }}/{{ domainData.SITE_TEMPLATE_DIR }}upload/pexels-photo-871053-1000x486.jpg alt width=1000 height=486 title=pexels-photo-871053></a>
-                                                    </div><a href=# class=zilla-likes id=zilla-likes-6613 title="Like this"><span class=zilla-likes-count>261</span> <span class=zilla-likes-postfix></span></a></div>
-                                                <div class=gdlr-core-blog-full-content-wrap>
-                                                                                                        
-                                                    <div class="gdlr-core-blog-full-head clearfix">
-                                                        <div class=gdlr-core-blog-full-head-right>
-                                                            <h3 class="gdlr-core-blog-title gdlr-core-skin-title" id="h3_2207_3">
-                                                                <a href=# >9 Most Awesome Blue Lake With Snow Mountain</a>
-                                                            </h3>
-                                                            <div class="gdlr-core-blog-info-wrapper gdlr-core-skin-divider">
-                                                                <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-author">
-                                                                    <img alt src='https://doctetese.cz/templates/doctetese.cz/upload/avatar.jpeg'  class='avatar avatar-50 photo' height=50 width=50>
-                                                                        <a href=# title="Posts by Jane Smith" rel=author>Jane Smith</a>
-                                                                    </span>
-                                                                    <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-date">
-                                                                        <a href=#>November 3, 2019</a>
-                                                                    </span>
-                                                                    <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-category">
-                                                                        <a href=# rel=tag>Travel</a>
-                                                                    </span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class=gdlr-core-blog-content>I neglect my talents Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia....</div>
-                                                        <div class="gdlr-core-social-share-item gdlr-core-item-pdb  gdlr-core-left-align gdlr-core-social-share-left-text gdlr-core-style-plain" id="div_2207_3">
-                                                            <span class=gdlr-core-social-share-wrap>
-                                                                <a class=gdlr-core-social-share-facebook href="#" target=_blank  id="a_2207_0"  >
-                                                                    <i class="fa fa-facebook" ></i>
-                                                                </a>
-                                                                <a class=gdlr-core-social-share-google-plus href="#" target=_blank  id="a_2207_1"  >
-                                                                    <i class="fa fa-google-plus" ></i>
-                                                                </a>
-                                                                <a class=gdlr-core-social-share-pinterest href="#" target=_blank  id="a_2207_2"  >
-                                                                    <i class="fa fa-pinterest-p" ></i>
-                                                                </a>
-                                                                <a class=gdlr-core-social-share-stumbleupon href="#" target=_blank  id="a_2207_3"  >
-                                                                    <i class="fa fa-stumbleupon" ></i>
-                                                                </a>
-                                                                <a class=gdlr-core-social-share-twitter href="#" target=_blank   id="a_2207_4"  >
-                                                                    <i class="fa fa-twitter" ></i>
-                                                                </a>
-                                                            </span>
-                                                        </div>
-                                                </div>
-                                            </div>
-                                            <div class="gdlr-core-item-list gdlr-core-blog-full  gdlr-core-item-mglr gdlr-core-style-left">
-                                                
-                                                <div class="gdlr-core-blog-thumbnail-wrap clearfix">
-                                                    <div class="gdlr-core-blog-thumbnail gdlr-core-media-image  gdlr-core-opacity-on-hover gdlr-core-zoom-on-hover">
-                                                        <a href=#>
-                                                            <img src=https://doctetese.cz/templates/doctetese.cz/upload/pexels-photo-25284-1000x486.jpg alt width=1000 height=486 title=pexels-photo-25284>
-                                                            </a>
-                                                        </div>
-                                                        <a href=# class=zilla-likes id=zilla-likes-6611 title="Like this">
-                                                            <span class=zilla-likes-count>138</span>
-                                                            <span class=zilla-likes-postfix></span>
-                                                        </a>
-                                                    </div>
-                                                    <div class=gdlr-core-blog-full-content-wrap>
-                                                        <div class="gdlr-core-blog-full-head clearfix">
-                                                            <div class=gdlr-core-blog-full-head-right>
-                                                                <h3 class="gdlr-core-blog-title gdlr-core-skin-title" id="h3_2207_4">
-                                                                    <a href=# >8 Ways To Travel Like a Pro</a>
-                                                                </h3>
-                                                                <div class="gdlr-core-blog-info-wrapper gdlr-core-skin-divider">
-                                                                    <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-author">
-                                                                <img alt src=https://doctetese.cz/templates/doctetese.cz/'upload/avatar.jpeg'  class='avatar avatar-50 photo' height=50 width=50>
-                                                                    <a href=# title="Posts by Janet Jones" rel=author>Janet Jones</a>
-                                                                </span>
-                                                                <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-date">
-                                                                    <a href=#>October 26, 2019</a>
-                                                                </span>
-                                                                <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-category">
-                                                                    <a href=# rel=tag>Travel</a>
-                                                                </span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class=gdlr-core-blog-content>I neglect my talents Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia....
-                                                    </div>
-                                                    <div class="gdlr-core-social-share-item gdlr-core-item-pdb  gdlr-core-left-align gdlr-core-social-share-left-text gdlr-core-style-plain" id="div_2207_4">
-                                                        <span class=gdlr-core-social-share-wrap>
-                                                            <a class=gdlr-core-social-share-facebook href="#" target=_blank >
-                                                                <i class="fa fa-facebook" ></i>
-                                                            </a>
-                                                            <a class=gdlr-core-social-share-google-plus href="#" target=_blank >
-                                                                <i class="fa fa-google-plus" ></i>
-                                                            </a>
-                                                            <a class=gdlr-core-social-share-pinterest href="#" target=_blank >
-                                                                <i class="fa fa-pinterest-p" ></i>
-                                                            </a>
-                                                            <a class=gdlr-core-social-share-stumbleupon href="#" target=_blank >
-                                                                <i class="fa fa-stumbleupon" ></i>
-                                                            </a>
-                                                            <a class=gdlr-core-social-share-twitter href="#" target=_blank   id="a_2207_5"  >
-                                                                <i class="fa fa-twitter" ></i>
-                                                            </a>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            
-                                            <div class="gdlr-core-item-list gdlr-core-blog-full  gdlr-core-item-mglr gdlr-core-style-left">
-                                                <div class="gdlr-core-blog-thumbnail-wrap clearfix">
-                                                    <div class="gdlr-core-blog-thumbnail gdlr-core-media-image  gdlr-core-opacity-on-hover gdlr-core-zoom-on-hover">
-                                                        <a href=#>
-                                                            <img src=https://doctetese.cz/templates/doctetese.cz/upload/pexels-photo-225227-1000x486.jpg alt width=1000 height=486 title=pexels-photo-225227>
-                                                            </a>
-                                                        </div>
-                                                        <a href=# class=zilla-likes id=zilla-likes-6606 title="Like this">
-                                                            <span class=zilla-likes-count>88</span>
-                                                            <span class=zilla-likes-postfix></span>
-                                                        </a>
-                                                    </div>
-                                                    <div class=gdlr-core-blog-full-content-wrap>
-                                                        <div class="gdlr-core-blog-full-head clearfix">
-                                                            <div class=gdlr-core-blog-full-head-right>
-                                                                <h3 class="gdlr-core-blog-title gdlr-core-skin-title" id="h3_2207_5">
-                                                                    <a href=# >5 Beginner Photographer&#8217;s Mistakes</a>
-                                                                </h3>
-                                                            <div class="gdlr-core-blog-info-wrapper gdlr-core-skin-divider">
-                                                                <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-author">
-                                                                    <img alt src='https://doctetese.cz/templates/doctetese.cz/upload/avatar.jpeg'  class='avatar avatar-50 photo' height=50 width=50>
-                                                                        <a href=# title="Posts by Kally Gordon" rel=author>Kally Gordon</a>
-                                                                    </span>
-                                                                    <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-date">
-                                                                        <a href=#>October 22, 2019</a>
-                                                                    </span>
-                                                                    <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-category">
-                                                                        <a href=# rel=tag>Fashion</a>
-                                                                        <span class=gdlr-core-sep>,</span>
-                                                                        <a href=# rel=tag>Photography</a>
-                                                                    </span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class=gdlr-core-blog-content>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic...</div>
-                                                    <div class="gdlr-core-social-share-item gdlr-core-item-pdb  gdlr-core-left-align gdlr-core-social-share-left-text gdlr-core-style-plain" id="div_2207_5">
-                                                        <span class=gdlr-core-social-share-wrap>
-                                                            <a class=gdlr-core-social-share-facebook href="#" target=_blank >
-                                                                <i class="fa fa-facebook" ></i>
-                                                            </a>
-                                                            <a class=gdlr-core-social-share-google-plus href="#" target=_blank >
-                                                                <i class="fa fa-google-plus" ></i>
-                                                            </a>
-                                                            <a class=gdlr-core-social-share-pinterest href="#" target=_blank >
-                                                                <i class="fa fa-pinterest-p" ></i>
-                                                            </a>
-                                                            <a class=gdlr-core-social-share-stumbleupon href="#" target=_blank >
-                                                                <i class="fa fa-stumbleupon" ></i>
-                                                            </a>
-                                                            <a class=gdlr-core-social-share-twitter href="#" target=_blank   id="a_2207_6"  >
-                                                                <i class="fa fa-twitter" ></i>
-                                                            </a>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            
-                                            <div class="gdlr-core-item-list gdlr-core-blog-full  gdlr-core-item-mglr gdlr-core-style-left">
-                                                <div class="gdlr-core-blog-thumbnail-wrap clearfix">
-                                                    <div class="gdlr-core-blog-thumbnail gdlr-core-media-image  gdlr-core-opacity-on-hover gdlr-core-zoom-on-hover">
-                                                        <a href=#>
-                                                            <img src=https://doctetese.cz/templates/doctetese.cz/upload/hugues-de-buyer-mimeure-335733-unsplash-1000x486.jpg alt width=1000 height=486 title=hugues-de-buyer-mimeure-335733-unsplash>
-                                                            </a>
-                                                        </div>
-                                                        <a href=# class=zilla-likes id=zilla-likes-6604 title="Like this">
-                                                            <span class=zilla-likes-count>65</span>
-                                                            <span class=zilla-likes-postfix></span>
-                                                        </a>
-                                                    </div>
-                                                    <div class=gdlr-core-blog-full-content-wrap>
-                                                        <div class="gdlr-core-blog-full-head clearfix">
-                                                            <div class=gdlr-core-blog-full-head-right>
-                                                                <h3 class="gdlr-core-blog-title gdlr-core-skin-title" id="h3_2207_6">
-                                                                    <a href=# >10 Most Awesome Breathtaking Places</a>
-                                                                </h3>
-                                                                <div class="gdlr-core-blog-info-wrapper gdlr-core-skin-divider">
-                                                                    <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-author">
-                                                                        <img alt src='https://doctetese.cz/templates/doctetese.cz/upload/avatar.jpeg'  class='avatar avatar-50 photo' height=50 width=50>
-                                                                            <a href=# title="Posts by Paul Newman" rel=author>Paul Newman</a>
-                                                                        </span>
-                                                                        <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-date">
-                                                                            <a href=#>October 18, 2019</a>
-                                                                        </span>
-                                                                        <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-category">
-                                                                            <a href=# rel=tag>Headline</a>
-                                                                            <span class=gdlr-core-sep>,</span>
-                                                                            <a href=# rel=tag>Travel</a>
-                                                                        </span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                    <div class=gdlr-core-blog-content>I neglect my talents Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia....</div>
-                                                    <div class="gdlr-core-social-share-item gdlr-core-item-pdb  gdlr-core-left-align gdlr-core-social-share-left-text gdlr-core-style-plain" id="div_2207_6">
-                                                        <span class=gdlr-core-social-share-wrap>
-                                                            <a class=gdlr-core-social-share-facebook href="#" target=_blank >
-                                                                <i class="fa fa-facebook" ></i>
-                                                            </a>
-                                                            <a class=gdlr-core-social-share-google-plus href="#" target=_blank  >
-                                                                <i class="fa fa-google-plus" ></i>
-                                                            </a>
-                                                            <a class=gdlr-core-social-share-pinterest href="#" target=_blank  >
-                                                                <i class="fa fa-pinterest-p" ></i>
-                                                            </a>
-                                                            <a class=gdlr-core-social-share-stumbleupon href="#" target=_blank  >
-                                                                <i class="fa fa-stumbleupon" ></i>
-                                                            </a>
-                                                            <a class=gdlr-core-social-share-twitter href="#" target=_blank id="a_2207_7"  >
-                                                                <i class="fa fa-twitter" ></i>
-                                                            </a>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-
-                                            
-                                            <div class="gdlr-core-item-list gdlr-core-blog-full  gdlr-core-item-mglr gdlr-core-style-left">
-                                                <div class="gdlr-core-blog-thumbnail-wrap clearfix">
-                                                    <div class="gdlr-core-blog-thumbnail gdlr-core-media-image  gdlr-core-opacity-on-hover gdlr-core-zoom-on-hover">
-                                                        <a href=#>
-                                                            <img src=https://doctetese.cz/templates/doctetese.cz/upload/brenda-godinez-228181-unsplash-1000x486.jpg alt width=1000 height=486 title=brenda-godinez-228181-unsplash>
-                                                            </a>
-                                                        </div>
-                                                        <a href=# class=zilla-likes id=zilla-likes-6602 title="Like this">
-                                                            <span class=zilla-likes-count>29</span>
-                                                            <span class=zilla-likes-postfix></span>
-                                                        </a>
-                                                    </div>
-                                                    <div class=gdlr-core-blog-full-content-wrap>
-                                                        <div class="gdlr-core-blog-full-head clearfix">
-                                                            <div class=gdlr-core-blog-full-head-right>
-                                                                <h3 class="gdlr-core-blog-title gdlr-core-skin-title" id="h3_2207_7">
-                                                                    <a href=# >10 Best Way to Styling Your Food</a>
-                                                                </h3>
-                                                                <div class="gdlr-core-blog-info-wrapper gdlr-core-skin-divider">
-                                                                    <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-author">
-                                                                        <img alt src='https://doctetese.cz/templates/doctetese.cz/upload/avatar.jpeg'  class='avatar avatar-50 photo' height=50 width=50>
-                                                                            <a href=# title="Posts by Jane Smith" rel=author>Jane Smith</a>
-                                                                        </span>
-                                                                        <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-date">
-                                                                            <a href=#>October 11, 2019</a>
-                                                                        </span>
-                                                                        <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-category">
-                                                                            <a href=# rel=tag>Food</a>
-                                                                            <span class=gdlr-core-sep>,</span>
-                                                                            <a href=# rel=tag>Photography</a>
-                                                                        </span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class=gdlr-core-blog-content>I neglect my talents Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia....</div>
-                                                            <div class="gdlr-core-social-share-item gdlr-core-item-pdb  gdlr-core-left-align gdlr-core-social-share-left-text gdlr-core-style-plain" id="div_2207_7">
-                                                                <span class=gdlr-core-social-share-wrap>
-                                                                    <a class=gdlr-core-social-share-facebook href="#" target=_blank >
-                                                                        <i class="fa fa-facebook" ></i>
-                                                                    </a>
-                                                                    <a class=gdlr-core-social-share-google-plus href="#" target=_blank >
-                                                                        <i class="fa fa-google-plus" ></i>
-                                                                    </a>
-                                                                    <a class=gdlr-core-social-share-pinterest href="#" target=_blank >
-                                                                        <i class="fa fa-pinterest-p" ></i>
-                                                                    </a>
-                                                                    <a class=gdlr-core-social-share-stumbleupon href="#" target=_blank >
-                                                                        <i class="fa fa-stumbleupon" ></i>
-                                                                    </a>
-                                                                    <a class=gdlr-core-social-share-twitter href="#" target=_blank   id="a_2207_8"  >
-                                                                        <i class="fa fa-twitter" ></i>
-                                                                    </a>
-                                                                </span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="gdlr-core-item-list gdlr-core-blog-full  gdlr-core-item-mglr gdlr-core-style-left">
-                                                        <div class="gdlr-core-blog-thumbnail-wrap clearfix">
-                                                            <div class="gdlr-core-blog-thumbnail gdlr-core-media-image  gdlr-core-opacity-on-hover gdlr-core-zoom-on-hover">
-                                                                <a href=#>
-                                                                    <img src=https://doctetese.cz/templates/doctetese.cz/upload/tanja-heffner-204193-unsplash-1000x486.jpg alt width=1000 height=486 title=tanja-heffner-204193-unsplash>
-                                                                    </a>
-                                                                </div>
-                                                                <a href=# class=zilla-likes id=zilla-likes-6600 title="Like this">
-                                                                    <span class=zilla-likes-count>28</span>
-                                                                    <span class=zilla-likes-postfix></span>
-                                                                </a>
-                                                            </div>
-                                                            <div class=gdlr-core-blog-full-content-wrap>
-                                                                <div class="gdlr-core-blog-full-head clearfix">
-                                                                    <div class=gdlr-core-blog-full-head-right>
-                                                                        <h3 class="gdlr-core-blog-title gdlr-core-skin-title" id="h3_2207_8">
-                                                                            <a href=# >12 Awesome Fashion Trend in For Winter</a>
-                                                                        </h3>
-                                                                        <div class="gdlr-core-blog-info-wrapper gdlr-core-skin-divider">
-                                                                            <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-author">
-                                                                                <img alt src='https://doctetese.cz/templates/doctetese.cz/upload/avatar.jpeg'  class='avatar avatar-50 photo' height=50 width=50>
-                                                                                    <a href=# title="Posts by Janet Jones" rel=author>Janet Jones</a>
-                                                                                </span>
-                                                                                <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-date">
-                                                                                    <a href=#>October 5, 2019</a>
-                                                                                </span>
-                                                                                <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-category">
-                                                                                    <a href=# rel=tag>Fashion</a>
-                                                                                    <span class=gdlr-core-sep>,</span>
-                                                                                    <a href=# rel=tag>Photography</a>
-                                                                                </span>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class=gdlr-core-blog-content>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic...</div>
-                                                                    <div class="gdlr-core-social-share-item gdlr-core-item-pdb  gdlr-core-left-align gdlr-core-social-share-left-text gdlr-core-style-plain" id="div_2207_8">
-                                                                        <span class=gdlr-core-social-share-wrap>
-                                                                            <a class=gdlr-core-social-share-facebook href="#" target=_blank >
-                                                                                <i class="fa fa-facebook" ></i>
-                                                                            </a>
-                                                                            <a class=gdlr-core-social-share-google-plus href="#" target=_blank >
-                                                                                <i class="fa fa-google-plus" ></i>
-                                                                            </a>
-                                                                            <a class=gdlr-core-social-share-pinterest href="#" target=_blank >
-                                                                                <i class="fa fa-pinterest-p" ></i>
-                                                                            </a>
-                                                                            <a class=gdlr-core-social-share-stumbleupon href="#" target=_blank >
-                                                                                <i class="fa fa-stumbleupon" ></i>
-                                                                            </a>
-                                                                            <a class=gdlr-core-social-share-twitter href="#" target=_blank   id="a_2207_9"  >
-                                                                                <i class="fa fa-twitter" ></i>
-                                                                            </a>
-                                                                        </span>
-                                                                    </div>
-                                                                </div>
-                                            </div>
+                                            {% for post in displayData.articles %}
+                                                {% include 'inc/categoryPost.twig' %}	
+                                            {% endfor %}
                                         </div>
-                                        <div class="gdlr-core-pagination  gdlr-core-style-circle gdlr-core-right-align gdlr-core-item-pdlr"><span aria-current=page class='page-numbers current'>1</span> <a class=page-numbers href=#>2</a> <a class=page-numbers href=#>3</a> <a class=page-numbers href=#>4</a>
-                                            <a class="next page-numbers" href=#></a>
+                                        
+                                        <div class="gdlr-core-pagination gdlr-core-style-circle gdlr-core-right-align gdlr-core-item-pdlr">
+                                            {% set currentPage = get.articlesPage|default(1) %}
+                                            {% for i in 1..displayData.totalPages %}
+                                                {% if i == currentPage %}
+                                                    <span aria-current="page" class="page-numbers current">{{ i }}</span>
+                                                {% else %}
+                                                    <a class="page-numbers" href="{{ modify_query(actualUrl, {'articlesPage': i}) }}">{{ i }}</a>
+                                                {% endif %}
+                                            {% endfor %}
+
+                                            {% if currentPage > 1 %}
+                                                <a class="prev page-numbers" rel="prev" href="{{ modify_query(actualUrl, {'articlesPage': currentPage - 1}) }}">Previous</a>
+                                            {% endif %}
+
+                                            {% if currentPage < displayData.totalPages %}
+                                                <a class="next page-numbers" rel="next" href="{{ modify_query(actualUrl, {'articlesPage': currentPage + 1}) }}">Next</a>
+                                            {% endif %}
                                         </div>
                                     </div>
                                 </div>
@@ -379,13 +82,13 @@
                         </div>
                         <div class="gdlr-core-pbf-sidebar-right gdlr-core-column-extend-right  akea-sidebar-area gdlr-core-column-20 gdlr-core-pbf-sidebar-padding  gdlr-core-line-height" data-skin="Blog List" id="div_2207_9">
                             <div class="gdlr-core-sidebar-item gdlr-core-item-pdlr">
-                                <div id=text-4 class="widget widget_text akea-widget">
+                                {# <div id=text-4 class="widget widget_text akea-widget">
                                     <h3 class="akea-widget-title"><span class=akea-widget-head-text>About Me</span><span class=akea-widget-head-divider></span></h3><span class=clear></span>
                                     <div class=textwidget>
                                         <p><img class="alignnone size-full wp-image-6650" src=https://doctetese.cz/templates/doctetese.cz/upload/about-image.png alt width=120>
                                             <br> Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated.</p> <a class="gdlr-core-button gdlr-core-button-shortcode  gdlr-core-button-transparent gdlr-core-button-with-border" href=# target=_blank id="a_2207_10" rel="noopener noreferrer"><span class=gdlr-core-content >more about me</span><i class="gdlr-core-pos-right arrow_right"  ></i></a></div>
-                                </div>
-                                <div id=text-7 class="widget widget_text akea-widget">
+                                </div> #}
+                                {# <div id=text-7 class="widget widget_text akea-widget">
                                     <div class=textwidget>
                                         <div class="gdlr-core-widget-box-shortcode  gdlr-core-center-align" id="div_2207_10">
                                             <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-center-align gdlr-core-title-item-caption-top" id="div_2207_11">
@@ -407,41 +110,21 @@
                                                 </form>
                                             </div> <span class=gdlr-core-space-shortcode id="span_2207_5"></span></div>
                                     </div>
-                                </div>
+                                </div> #}
                                 <div id=gdlr-core-recent-post-widget-2 class="widget widget_gdlr-core-recent-post-widget akea-widget">
-                                    <h3 class="akea-widget-title"><span class=akea-widget-head-text>Popular Post</span><span class=akea-widget-head-divider></span></h3><span class=clear></span>
+                                    <h3 class="akea-widget-title"><span class=akea-widget-head-text>Populární posty</span><span class=akea-widget-head-divider></span></h3><span class=clear></span>
                                     <div class="gdlr-core-recent-post-widget-wrap gdlr-core-style-1">
-                                        <div class="gdlr-core-recent-post-widget clearfix">
-                                            <div class="gdlr-core-recent-post-widget-thumbnail gdlr-core-media-image"><img src=https://doctetese.cz/templates/doctetese.cz/upload/qingbao-meng-330658-unsplash-150x150.jpg alt width=150 height=150 title=qingbao-meng-330658-unsplash></div>
-                                            <div class=gdlr-core-recent-post-widget-content>
-                                                <div class=gdlr-core-recent-post-widget-title><a href=#>The Most Beautiful Green Field on Earth</a></div>
-                                                <div class=gdlr-core-recent-post-widget-info><span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-author"><img alt src='https://doctetese.cz/templates/doctetese.cz/upload/avatar.jpeg'  class='avatar avatar-50 photo' height=50 width=50><a href=# title="Posts by Paul Newman" rel=author>Paul Newman</a></span><span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-date"><a href=#>September 5, 2019</a></span></div>
-                                            </div>
-                                        </div>
-                                        <div class="gdlr-core-recent-post-widget clearfix">
-                                            <div class="gdlr-core-recent-post-widget-thumbnail gdlr-core-media-image"><img src=https://doctetese.cz/templates/doctetese.cz/upload/alexander-mils-365917-unsplash-150x150.jpg alt width=150 height=150 title=alexander-mils-365917-unsplash></div>
-                                            <div class=gdlr-core-recent-post-widget-content>
-                                                <div class=gdlr-core-recent-post-widget-title><a href=#>How to Shoot Food on Your Phone Like a Pro</a></div>
-                                                <div class=gdlr-core-recent-post-widget-info><span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-author"><img alt src='https://doctetese.cz/templates/doctetese.cz/upload/avatar.jpeg'  class='avatar avatar-50 photo' height=50 width=50><a href=# title="Posts by Kally Gordon" rel=author>Kally Gordon</a></span><span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-date"><a href=#>August 5, 2019</a></span></div>
-                                            </div>
-                                        </div>
-                                        <div class="gdlr-core-recent-post-widget clearfix">
-                                            <div class="gdlr-core-recent-post-widget-thumbnail gdlr-core-media-image"><img src=https://doctetese.cz/templates/doctetese.cz/upload/gaetano-cessati-120488-unsplash-150x150.jpg alt width=150 height=150 title=gaetano-cessati-120488-unsplash></div>
-                                            <div class=gdlr-core-recent-post-widget-content>
-                                                <div class=gdlr-core-recent-post-widget-title><a href=#>One Of The Most Beautiful Beach In Brazil</a></div>
-                                                <div class=gdlr-core-recent-post-widget-info><span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-author"><img alt src='https://doctetese.cz/templates/doctetese.cz/upload/avatar.jpeg'  class='avatar avatar-50 photo' height=50 width=50><a href=# title="Posts by Paul Newman" rel=author>Paul Newman</a></span><span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-date"><a href=#>July 25, 2019</a></span></div>
-                                            </div>
-                                        </div>
+                                        {% include 'inc/popularpost.twig' %}
                                     </div>
                                 </div>
-                                <div id=text-5 class="widget widget_text akea-widget">
+                                {# <div id=text-5 class="widget widget_text akea-widget">
                                     <div class=textwidget>
                                         <p>
                                             <a href=#><img src=https://doctetese.cz/templates/doctetese.cz/upload/banner-600.jpg alt width=300 height=600 class="alignnone size-full wp-image-6652"></a>
                                         </p>
                                     </div>
-                                </div>
-                                <div id=gdlr-core-category-background-widget-2 class="widget widget_gdlr-core-category-background-widget akea-widget">
+                                </div> #}
+                                {# <div id=gdlr-core-category-background-widget-2 class="widget widget_gdlr-core-category-background-widget akea-widget">
                                     <h3 class="akea-widget-title"><span class=akea-widget-head-text>Category</span><span class=akea-widget-head-divider></span></h3><span class=clear></span>
                                     <ul class=gdlr-core-category-background-widget>
                                         <li class=gdlr-core-with-bg id="li_2207_0"><a href=#><span class=gdlr-core-category-background-widget-content ><span class=gdlr-core-category-background-widget-title >Fashion</span><span class=gdlr-core-category-background-widget-count >5</span></span></a></li>
@@ -450,9 +133,9 @@
                                         <li class=gdlr-core-with-bg id="li_2207_3"><a href=#><span class=gdlr-core-category-background-widget-content ><span class=gdlr-core-category-background-widget-title >Technology</span><span class=gdlr-core-category-background-widget-count >6</span></span></a></li>
                                         <li class=gdlr-core-with-bg id="li_2207_4"><a href=#><span class=gdlr-core-category-background-widget-content ><span class=gdlr-core-category-background-widget-title >Travel</span><span class=gdlr-core-category-background-widget-count >9</span></span></a></li>
                                     </ul>
-                                </div>
+                                </div> #}
                                 
-                                <div id=tag_cloud-2 class="widget widget_tag_cloud akea-widget">
+                                {# <div id=tag_cloud-2 class="widget widget_tag_cloud akea-widget">
                                     <h3 class="akea-widget-title">
                                         <span class=akea-widget-head-text>Tags</span>
                                         <span class=akea-widget-head-divider></span>
@@ -474,44 +157,21 @@
                                         <a href=# class="tag-cloud-link tag-link-20 tag-link-position-13" id="a_2207_28" aria-label="Tips (2 items)">Tips</a>
                                         <a href=# class="tag-cloud-link tag-link-115 tag-link-position-14" id="a_2207_29" aria-label="Travel (10 items)">Travel</a>
                                     </div>
-                                </div>
-                                <div id=text-6 class="widget widget_text akea-widget">
+                                </div> #}
+                                {# <div id=text-6 class="widget widget_text akea-widget">
                                     <div class=textwidget>
                                         <p>
                                             <a href=#><img class="alignnone size-full wp-image-6651" src=https://doctetese.cz/templates/doctetese.cz/upload/banner-250.jpg alt width=300 height=250></a>
                                         </p>
                                     </div>
-                                </div>
+                                </div> #}
                                 <div id=gdlr-core-recent-post-widget-3 class="widget widget_gdlr-core-recent-post-widget akea-widget">
-                                    <h3 class="akea-widget-title"><span class=akea-widget-head-text>Recent Post</span><span class=akea-widget-head-divider></span></h3><span class=clear></span>
+                                    <h3 class="akea-widget-title"><span class=akea-widget-head-text>Nejnovější</span><span class=akea-widget-head-divider></span></h3><span class=clear></span>
                                     <div class="gdlr-core-recent-post-widget-wrap gdlr-core-style-full">
-                                        <div class="gdlr-core-recent-post-widget clearfix">
-                                            <div class="gdlr-core-recent-post-widget-thumbnail gdlr-core-media-image">
-                                                <a class="gdlr-core-lightgallery gdlr-core-js " href=upload/post-vr.jpg><img src=https://doctetese.cz/templates/doctetese.cz/upload/post-vr-1000x486.jpg alt width=1000 height=486 title=post-vr></a><span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-category"><a href=# rel=tag>Trending</a></span></div>
-                                            <div class=gdlr-core-recent-post-widget-content>
-                                                <div class="gdlr-core-recent-post-widget-title gdlr-core-title-font"><a href=#>Check Out The Most Awesome VR Headset in 2020</a></div>
-                                                <div class=gdlr-core-recent-post-widget-info><span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-author"><img alt src='https://doctetese.cz/templates/doctetese.cz/upload/avatar.jpeg'  class='avatar avatar-50 photo' height=50 width=50><a href=# title="Posts by Jane Smith" rel=author>Jane Smith</a></span><span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-date"><a href=#>November 7, 2019</a></span></div>
-                                            </div>
-                                        </div>
-                                        <div class="gdlr-core-recent-post-widget clearfix">
-                                            <div class="gdlr-core-recent-post-widget-thumbnail gdlr-core-media-image">
-                                                <a class="gdlr-core-lightgallery gdlr-core-js " href=upload/yiran-ding-624696-unsplash.jpg><img src=https://doctetese.cz/templates/doctetese.cz/upload/yiran-ding-624696-unsplash-1000x486.jpg alt width=1000 height=486 title=yiran-ding-624696-unsplash></a><span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-category"><a href=# rel=tag>Trending</a></span></div>
-                                            <div class=gdlr-core-recent-post-widget-content>
-                                                <div class="gdlr-core-recent-post-widget-title gdlr-core-title-font"><a href=#>Or It&#8217;s Now The End of Smartphones?</a></div>
-                                                <div class=gdlr-core-recent-post-widget-info><span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-author"><img alt src='https://doctetese.cz/templates/doctetese.cz/upload/avatar.jpeg'  class='avatar avatar-50 photo' height=50 width=50><a href=# title="Posts by Janet Jones" rel=author>Janet Jones</a></span><span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-date"><a href=#>November 7, 2019</a></span></div>
-                                            </div>
-                                        </div>
-                                        <div class="gdlr-core-recent-post-widget clearfix">
-                                            <div class="gdlr-core-recent-post-widget-thumbnail gdlr-core-media-image">
-                                                <a class="gdlr-core-lightgallery gdlr-core-js " href=upload/christopher-burns-271403-unsplash.jpg><img src=https://doctetese.cz/templates/doctetese.cz/upload/christopher-burns-271403-unsplash-1000x486.jpg alt width=1000 height=486 title=christopher-burns-271403-unsplash></a><span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-category"><a href=# rel=tag>Trending</a></span></div>
-                                            <div class=gdlr-core-recent-post-widget-content>
-                                                <div class="gdlr-core-recent-post-widget-title gdlr-core-title-font"><a href=#>XE Entertainment Brings You New Experience of Fun</a></div>
-                                                <div class=gdlr-core-recent-post-widget-info><span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-author"><img alt src='https://doctetese.cz/templates/doctetese.cz/upload/avatar.jpeg'  class='avatar avatar-50 photo' height=50 width=50><a href=# title="Posts by Kally Gordon" rel=author>Kally Gordon</a></span><span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-date"><a href=#>November 7, 2019</a></span></div>
-                                            </div>
-                                        </div>
+                                        {% include 'inc/nejnovejsiposty.twig' %}
                                     </div>
                                 </div>
-                                <div id=gdlr-core-instagram-widget-2 class="widget widget_gdlr-core-instagram-widget akea-widget">
+                                {# <div id=gdlr-core-instagram-widget-2 class="widget widget_gdlr-core-instagram-widget akea-widget">
                                     <h3 class="akea-widget-title"><span class=akea-widget-head-text>Instagram</span><span class=akea-widget-head-divider></span></h3><span class=clear></span>
                                     <div class="gdlr-core-instagram-widget clearfix">
                                         <div class=" gdlr-core-column-20 gdlr-core-column-first gdlr-core-media-image">
@@ -533,12 +193,12 @@
                                             <a class="gdlr-core-lightgallery gdlr-core-js " href="https://doctetese.cz/templates/doctetese.cz/upload/44898222_267175490542576_6183516087002698981_n7d5a.jpg" data-sub-html="So blue" data-lightbox-group=gdlr-core-img-group-1><img src="https://doctetese.cz/templates/doctetese.cz/upload/44898222_267175490542576_6183516087002698981_n7d5a.jpg" width=150 height=150 alt="So blue"></a>
                                         </div>
                                     </div>
-                                </div>
+                                </div> #}
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="gdlr-core-pbf-wrapper " id="div_2207_14">
+                {# <div class="gdlr-core-pbf-wrapper " id="div_2207_14">
                     <div class=gdlr-core-pbf-background-wrap></div>
                     <div class="gdlr-core-pbf-wrapper-content gdlr-core-js ">
                         <div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container">
@@ -571,7 +231,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> #}
             </div>
 {# {{  displayData.body|raw }} #}
 {% endblock %}

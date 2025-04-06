@@ -1,36 +1,15 @@
+
+{% for post in sliderArticles %}
 <li>
     <div class=gdlr-core-post-slider-slide>
         <div class="gdlr-core-post-slider-image gdlr-core-media-image">
-            <a href=#><img src={{ domainData.SITE_WEB }}/{{ domainData.SITE_TEMPLATE_DIR }}upload/pexels-photo-736166-1500x635.jpg alt width=1500 height=635 title=pexels-photo-736166><span class=gdlr-core-post-slider-overlay id="span_2207_0"></span></a>
+            <a href=#><img src="{{ post.images.images.articleDetail.varianta.banner.public_url }}" alt="{{ post.images.images.articleDetail.alt }}" width=1500 height=635 title={{ post.images.images.articleDetail.title }}><span class=gdlr-core-post-slider-overlay id="span_2207_0"></span></a>
         </div>
         <div class="gdlr-core-post-slider-caption gdlr-core-center-align">
-            <h3 class="gdlr-core-post-slider-title" id="h3_2207_0"><a href=# >Top Amazing Places to Go in Summer</a></h3>
-            <div class=gdlr-core-post-slider-widget-info><span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-date"><span class=gdlr-core-blog-info-sep >/</span><a href=#>November 6, 2019</a></span><span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-author"><span class=gdlr-core-blog-info-sep >/</span><a href=# title="Posts by Paul Newman" rel=author>Paul Newman</a></span>
-            </div>
-        </div>
-    </div>
-    </li>
-    <li>
-    <div class=gdlr-core-post-slider-slide>
-        <div class="gdlr-core-post-slider-image gdlr-core-media-image">
-            <a href=#><img src={{ domainData.SITE_WEB }}/{{ domainData.SITE_TEMPLATE_DIR }}upload/hugues-de-buyer-mimeure-335733-unsplash-1500x635.jpg alt width=1500 height=635 title=hugues-de-buyer-mimeure-335733-unsplash><span class=gdlr-core-post-slider-overlay id="span_2207_1"></span></a>
-        </div>
-        <div class="gdlr-core-post-slider-caption gdlr-core-center-align">
-            <h3 class="gdlr-core-post-slider-title" id="h3_2207_1"><a href=# >10 Most Awesome Breathtaking Places</a></h3>
-            <div class=gdlr-core-post-slider-widget-info><span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-date"><span class=gdlr-core-blog-info-sep >/</span><a href=#>October 18, 2019</a></span><span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-author"><span class=gdlr-core-blog-info-sep >/</span><a href=# title="Posts by Paul Newman" rel=author>Paul Newman</a></span>
-            </div>
-        </div>
-    </div>
-    </li>
-    <li>
-    <div class=gdlr-core-post-slider-slide>
-        <div class="gdlr-core-post-slider-image gdlr-core-media-image">
-            <a href=#><img src={{ domainData.SITE_WEB }}/{{ domainData.SITE_TEMPLATE_DIR }}upload/brooke-lark-289769-unsplash-1500x635.jpg alt width=1500 height=635 title=brooke-lark-289769-unsplash><span class=gdlr-core-post-slider-overlay id="span_2207_2"></span></a>
-        </div>
-        <div class="gdlr-core-post-slider-caption gdlr-core-center-align">
-            <h3 class="gdlr-core-post-slider-title" id="h3_2207_2"><a href=# >5 Dessert Menus To Make In The Party</a></h3>
-            <div class=gdlr-core-post-slider-widget-info><span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-date"><span class=gdlr-core-blog-info-sep >/</span><a href=#>June 11, 2019</a></span><span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-author"><span class=gdlr-core-blog-info-sep >/</span><a href=# title="Posts by Paul Newman" rel=author>Paul Newman</a></span>
+            <h3 class="gdlr-core-post-slider-title" id="h3_2207_0"><a href={{ post.url }} >{{ post.title }}</a></h3>
+            <div class=gdlr-core-post-slider-widget-info><span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-date"><span class=gdlr-core-blog-info-sep >/</span><a href=#>{{ post.publish_at|date("d. m. Y") }}</a></span><span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-author"><span class=gdlr-core-blog-info-sep >/</span><a href=# title="Posts by Paul Newman" rel=author>Paul Newman</a></span>
             </div>
         </div>
     </div>
 </li>
+{% endfor %}

@@ -1,9 +1,224 @@
 {% extends "index.twig" %}
-{% block title %}{{ pageData.categoryInfo.title }}{% endblock %}
-{% block description %}{{ pageData.categoryInfo.description }}{% endblock %}
+{% block title %}{{ pageData.categoryInfo.meta.title }}{% endblock %}
+{% block description %}{{ pageData.categoryInfo.meta.description }}{% endblock %}
+{% block keywords %}{{ pageData.categoryInfo.meta.keywords }}{% endblock %}
+
+{% block author %}{{ domainData.domain.meta_autor }}{% endblock %}
+
+{% block og_title %}{{ pageData.categoryInfo.meta.title }}{% endblock %}
+{% block og_description %}{{ pageData.categoryInfo.meta.description }}{% endblock %}
+{% block og_image %}{{ domainData.domain.meta_og_img }}{% endblock %}
+{% block og_url %}{{ actualUrl }}{% endblock %}
+{% block og_content_type %}website{% endblock %}
+
+{% block twitter_account %}{{ domainData.domain.twitter_account }}{% endblock %}
+{% block twitter_type %}summary_large_image{% endblock %}
+{% block twitter_title %}{{ pageData.categoryInfo.meta.title }}{% endblock %}
+{% block twitter_image %}{{ domainData.domain.meta_og_img }}{% endblock %}
+{% block twitter_description %}{{ pageData.categoryInfo.meta.description }}{% endblock %}
+
+{% block jsonld %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "itemListElement": [
+    {% for post in displayData %}
+    {
+      "@type": "ListItem",
+      "position": {{ loop.index }},
+      "url": "{{ post.url }}"
+    }{% if not loop.last %},{% endif %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endblock %}
+
+{% block SITE_LANGUAGE %}{{ domainData.SITE_LANGUAGE }}{% endblock %}
+{% block SITE_HEAD_CODE %}{{ domainData.SITE_HEAD_CODE }}{% endblock %}
+{% block SITE_POST_BODY_CODE %}{{ domainData.SITE_POST_BODY_CODE }}{% endblock %}
+{% block SITE_PRE_END_BODY_CODE %}{{ domainData.SITE_PRE_END_BODY_CODE }}{% endblock %}
+
+
 {% block nadpis %}{{ displayData.title }}{% endblock %}
 
+{% block titleBlok %}
+<div class="akea-page-title-wrap  akea-style-custom akea-center-align" style="background-image: none;">
+            <div class=akea-header-transparent-substitute></div>
+            <div class=akea-page-title-overlay></div>
+            <div class="akea-page-title-container akea-container">
+                <div class="akea-page-title-content akea-item-pdlr" style="padding-top: 90px ;padding-bottom: 60px ;">
+                    <h1 class="akea-page-title" style="text-transform: none ;color: #191919 ;">{{ pageData.categoryInfo.title }}</h1>
+                    <div class=akea-page-caption style="color: #a8a8a8 ;"><a href="{{ domainData.SITE_WEB }}">Home</a>
+                    {% for path in pageData.pathInfo %}
+                     | <a href="{{ path.url }}">{{ path.title }}</a>
+                    {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock %}
 
 {% block obsah %}
 {{  displayData.body }}
+<div class="akea-content-container akea-container">
+                <div class=" akea-sidebar-wrap clearfix akea-line-height-0 akea-sidebar-style-right">
+                    <div class=" akea-sidebar-center gdlr-core-column-40 akea-line-height">
+                        <div class=gdlr-core-page-builder-body>
+                            <div class=gdlr-core-pbf-section>
+                                <div class="gdlr-core-pbf-section-container gdlr-core-container clearfix">
+                                    <div class=gdlr-core-pbf-element>
+                                        <div class="gdlr-core-blog-item gdlr-core-item-pdb clearfix  gdlr-core-style-blog-full" style="padding-bottom: 40px ;">
+                                            <div class="gdlr-core-blog-item-holder gdlr-core-js-2 clearfix" data-layout=fitrows>
+                                                {% for post in displayData %}
+                                                    {% include 'inc/categoryPost.twig' %}	
+                                                {% endfor %}
+
+                                            </div>
+                                            <div class="gdlr-core-pagination gdlr-core-style-circle gdlr-core-right-align gdlr-core-item-pdlr">{{ displayData.totalPages }}
+                                                {% set currentPage = get.articlesPage|default(1) %}
+                                                {% if displayData.totalPages > 1 %}
+                                                    {% if currentPage > 1 %}
+                                                        <a class="prev page-numbers" rel="prev" href="{{ modify_query(actualUrl, {'articlesPage': currentPage - 1}) }}">Previous</a>
+                                                    {% endif %}
+
+                                                    {% for i in 1..displayData.totalPages %}
+                                                        {% if i == currentPage %}
+                                                            <span aria-current="page" class="page-numbers current">{{ i }}</span>
+                                                        {% else %}
+                                                            <a class="page-numbers" href="{{ modify_query(actualUrl, {'articlesPage': i}) }}">{{ i }}</a>
+                                                        {% endif %}
+                                                    {% endfor %}
+
+                                                    {% if currentPage < displayData.totalPages %}
+                                                        <a class="next page-numbers" rel="next" href="{{ modify_query(actualUrl, {'articlesPage': currentPage + 1}) }}">Next</a>
+                                                    {% endif %}
+                                                {% endif %}
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" akea-sidebar-right gdlr-core-column-20 akea-line-height akea-line-height gdlr-core-sidebar-script">
+                        <div class="akea-sidebar-area akea-item-pdlr">
+                            {% include 'inc/aboutme.twig' %}
+
+                            {# <div id=text-7 class="widget widget_text akea-widget">
+                                <div class=textwidget>
+                                    <div class="gdlr-core-widget-box-shortcode  gdlr-core-center-align" style="color: #666666 ;padding: 50px 40px 65px;background-color: #f4f4f4 ;">
+                                        <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-center-align gdlr-core-title-item-caption-top" style="padding-bottom: 10px ;">
+                                            <div class="gdlr-core-title-item-title-wrap ">
+                                                <h3 class="gdlr-core-title-item-title gdlr-core-skin-title " style="font-size: 14px ;font-weight: 700 ;letter-spacing: 2px ;">Follow Us<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider" ></span></h3></div>
+                                        </div>
+                                        <div class="gdlr-core-social-network-item gdlr-core-item-pdb  gdlr-core-none-align" style="padding-bottom: 0px ;"><a href=# target=_blank class=gdlr-core-social-network-icon title=facebook style="font-size: 17px ;" rel="noopener noreferrer"><i class="fa fa-facebook" ></i></a><a href=# target=_blank class=gdlr-core-social-network-icon title=pinterest style="font-size: 17px ;margin-left: 24px ;" rel="noopener noreferrer"><i class="fa fa-pinterest-p" ></i></a><a href=# target=_blank class=gdlr-core-social-network-icon title=skype style="font-size: 17px ;margin-left: 24px ;" rel="noopener noreferrer"><i class="fa fa-skype" ></i></a><a href=# target=_blank class=gdlr-core-social-network-icon title=twitter style="font-size: 17px ;margin-left: 24px ;" rel="noopener noreferrer"><i class="fa fa-twitter" ></i></a><a href=# target=_blank class=gdlr-core-social-network-icon title=instagram style="font-size: 17px ;margin-left: 24px ;" rel="noopener noreferrer"><i class="fa fa-instagram" ></i></a></div>
+                                        <br> <span class=gdlr-core-space-shortcode style="margin-top: 0px ;"></span>
+                                        <br>
+                                        <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-center-align gdlr-core-title-item-caption-top" style="padding-bottom: 10px ;">
+                                            <div class="gdlr-core-title-item-title-wrap ">
+                                                <h3 class="gdlr-core-title-item-title gdlr-core-skin-title " style="font-size: 14px ;font-weight: 700 ;letter-spacing: 2px ;">Newsletter<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider" ></span></h3></div>
+                                        </div> Fill your email below to subscribe to my newsletter<span class=gdlr-core-space-shortcode style="margin-top: 10px ;"></span>
+                                        <br>
+                                        <div class="tnp tnp-subscription-minimal ">
+                                            <form action="#" method=post>
+                                                <input class=tnp-email type=email required name=ne value placeholder=Email>
+                                                <input class=tnp-submit type=submit value=Subscribe>
+                                            </form>
+                                        </div> <span class=gdlr-core-space-shortcode style="margin-top: -20px ;"></span></div>
+                                </div>
+                            </div> #}
+                            <div id=gdlr-core-recent-post-widget-2 class="widget widget_gdlr-core-recent-post-widget akea-widget">
+                                <h3 class="akea-widget-title"><span class=akea-widget-head-text>Populární příspěvky</span><span class=akea-widget-head-divider></span></h3><span class=clear></span>
+                                <div class="gdlr-core-recent-post-widget-wrap gdlr-core-style-1">
+                                    {% include 'inc/popularpost.twig' %}
+                                </div>
+                            </div>
+                            {# <div id=text-5 class="widget widget_text akea-widget">
+                                <div class=textwidget>
+                                    <p>
+                                        <a href=#><img src=upload/banner-600.jpg alt width=300 height=600 class="alignnone size-full wp-image-6652"></a>
+                                    </p>
+                                </div>
+                            </div> #}
+                            {# <div id=gdlr-core-category-background-widget-2 class="widget widget_gdlr-core-category-background-widget akea-widget">
+                                <h3 class="akea-widget-title"><span class=akea-widget-head-text>Category</span><span class=akea-widget-head-divider></span></h3><span class=clear></span>
+                                <ul class=gdlr-core-category-background-widget>
+                                    <li class=gdlr-core-with-bg style="background-image: url(upload/cat-bg-fashion.jpg) ;"><a href=../category/fashion/index.html><span class=gdlr-core-category-background-widget-content ><span class=gdlr-core-category-background-widget-title >Fashion</span><span class=gdlr-core-category-background-widget-count >5</span></span></a></li>
+                                    <li class=gdlr-core-with-bg style="background-image: url(upload/cat-bg-food.jpg) ;"><a href=../category/food/index.html><span class=gdlr-core-category-background-widget-content ><span class=gdlr-core-category-background-widget-title >Food</span><span class=gdlr-core-category-background-widget-count >6</span></span></a></li>
+                                    <li class=gdlr-core-with-bg style="background-image: url(upload/cat-bg-photography.jpg) ;"><a href=../category/photography/index.html><span class=gdlr-core-category-background-widget-content ><span class=gdlr-core-category-background-widget-title >Photography</span><span class=gdlr-core-category-background-widget-count >11</span></span></a></li>
+                                    <li class=gdlr-core-with-bg style="background-image: url(upload/cat-bg-tech.jpg) ;"><a href=../category/technology/index.html><span class=gdlr-core-category-background-widget-content ><span class=gdlr-core-category-background-widget-title >Technology</span><span class=gdlr-core-category-background-widget-count >6</span></span></a></li>
+                                    <li class=gdlr-core-with-bg style="background-image: url(upload/cat-bg-travel.jpg) ;"><a href=../category/travel/index.html><span class=gdlr-core-category-background-widget-content ><span class=gdlr-core-category-background-widget-title >Travel</span><span class=gdlr-core-category-background-widget-count >9</span></span></a></li>
+                                </ul>
+                            </div> #}
+                            {# <div id=tag_cloud-2 class="widget widget_tag_cloud akea-widget">
+                                <h3 class="akea-widget-title"><span class=akea-widget-head-text>Tags</span><span class=akea-widget-head-divider></span></h3><span class=clear></span>
+                                <div class=tagcloud><a href=../tag/beach/index.html class="tag-cloud-link tag-link-117 tag-link-position-1" style="font-size: 11.405405405405pt;" aria-label="Beach (2 items)">Beach</a> <a href=../tag/dress/index.html class="tag-cloud-link tag-link-130 tag-link-position-2" style="font-size: 13.675675675676pt;" aria-label="Dress (3 items)">Dress</a> <a href=../tag/fashion/index.html class="tag-cloud-link tag-link-10 tag-link-position-3" style="font-size: 19.351351351351pt;" aria-label="Fashion (7 items)">Fashion</a> <a href=../tag/food/index.html class="tag-cloud-link tag-link-126 tag-link-position-4" style="font-size: 17.081081081081pt;" aria-label="Food (5 items)">Food</a> <a href=../tag/gadget/index.html class="tag-cloud-link tag-link-140 tag-link-position-5" style="font-size: 8pt;" aria-label="Gadget (1 item)">Gadget</a> <a href=../tag/holiday/index.html class="tag-cloud-link tag-link-138 tag-link-position-6" style="font-size: 8pt;" aria-label="Holiday (1 item)">Holiday</a> <a href=../tag/nature/index.html class="tag-cloud-link tag-link-14 tag-link-position-7" style="font-size: 11.405405405405pt;" aria-label="Nature (2 items)">Nature</a> <a href=../tag/ocean/index.html class="tag-cloud-link tag-link-142 tag-link-position-8" style="font-size: 8pt;" aria-label="Ocean (1 item)">Ocean</a> <a href=../tag/photography/index.html class="tag-cloud-link tag-link-131 tag-link-position-9" style="font-size: 15.567567567568pt;" aria-label="Photography (4 items)">Photography</a> <a href=../tag/post-format/index.html class="tag-cloud-link tag-link-17 tag-link-position-10" style="font-size: 19.351351351351pt;" aria-label="Post Format (7 items)">Post Format</a> <a href=../tag/style/index.html class="tag-cloud-link tag-link-139 tag-link-position-11" style="font-size: 8pt;" aria-label="Style (1 item)">Style</a> <a href=../tag/tech/index.html class="tag-cloud-link tag-link-128 tag-link-position-12" style="font-size: 22pt;" aria-label="Tech (10 items)">Tech</a> <a href=../tag/tips/index.html class="tag-cloud-link tag-link-20 tag-link-position-13" style="font-size: 11.405405405405pt;" aria-label="Tips (2 items)">Tips</a> <a href=../tag/travel/index.html class="tag-cloud-link tag-link-115 tag-link-position-14" style="font-size: 22pt;" aria-label="Travel (10 items)">Travel</a></div>
+                            </div> #}
+                            {# <div id=text-6 class="widget widget_text akea-widget">
+                                <div class=textwidget>
+                                    <p>
+                                        <a href=#><img class="alignnone size-full wp-image-6651" src=upload/banner-250.jpg alt width=300 height=250></a>
+                                    </p>
+                                </div>
+                            </div> #}
+                            <div id=gdlr-core-recent-post-widget-3 class="widget widget_gdlr-core-recent-post-widget akea-widget">
+                                <h3 class="akea-widget-title"><span class=akea-widget-head-text>Nedávné příspěvky</span><span class=akea-widget-head-divider></span></h3><span class=clear></span>
+                                <div class="gdlr-core-recent-post-widget-wrap gdlr-core-style-full">
+                                    {% include 'inc/nejnovejsiposty.twig' %}
+                                    {# <div class="gdlr-core-recent-post-widget clearfix">
+                                        <div class="gdlr-core-recent-post-widget-thumbnail gdlr-core-media-image">
+                                            <a class="gdlr-core-lightgallery gdlr-core-js " href=upload/post-vr.jpg><img src=upload/post-vr-1000x486.jpg alt width=1000 height=486 title=post-vr></a><span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-category"><a href=../category/trending/index.html rel=tag>Trending</a></span></div>
+                                        <div class=gdlr-core-recent-post-widget-content>
+                                            <div class="gdlr-core-recent-post-widget-title gdlr-core-title-font"><a href=../2018/11/07/check-out-the-most-awesome-vr-headset-in-2020/index.html>Check Out The Most Awesome VR Headset in 2020</a></div>
+                                            <div class=gdlr-core-recent-post-widget-info><span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlrupload/avatar.jpeg'  class='avatar avatar-50 photo' height=50 width=50><a href=../author/author1/index.html title="Posts by Jane Smith" rel=author>Jane Smith</a></span><span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-date"><a href=../2018/11/07/index.html>November 7, 2018</a></span></div>
+                                        </div>
+                                    </div>
+                                    <div class="gdlr-core-recent-post-widget clearfix">
+                                        <div class="gdlr-core-recent-post-widget-thumbnail gdlr-core-media-image">
+                                            <a class="gdlr-core-lightgallery gdlr-core-js " href=upload/yiran-ding-624696-unsplash.jpg><img src=upload/yiran-ding-624696-unsplash-1000x486.jpg alt width=1000 height=486 title=yiran-ding-624696-unsplash></a><span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-category"><a href=../category/trending/index.html rel=tag>Trending</a></span></div>
+                                        <div class=gdlr-core-recent-post-widget-content>
+                                            <div class="gdlr-core-recent-post-widget-title gdlr-core-title-font"><a href=../2018/11/07/or-its-now-the-end-of-smartphones/index.html>Or It&#8217;s Now The End of Smartphones?</a></div>
+                                            <div class=gdlr-core-recent-post-widget-info><span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlrupload/avatar.jpeg'  class='avatar avatar-50 photo' height=50 width=50><a href=../author/author3/index.html title="Posts by Janet Jones" rel=author>Janet Jones</a></span><span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-date"><a href=../2018/11/07/index.html>November 7, 2018</a></span></div>
+                                        </div>
+                                    </div>
+                                    <div class="gdlr-core-recent-post-widget clearfix">
+                                        <div class="gdlr-core-recent-post-widget-thumbnail gdlr-core-media-image">
+                                            <a class="gdlr-core-lightgallery gdlr-core-js " href=upload/christopher-burns-271403-unsplash.jpg><img src=upload/christopher-burns-271403-unsplash-1000x486.jpg alt width=1000 height=486 title=christopher-burns-271403-unsplash></a><span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-category"><a href=../category/trending/index.html rel=tag>Trending</a></span></div>
+                                        <div class=gdlr-core-recent-post-widget-content>
+                                            <div class="gdlr-core-recent-post-widget-title gdlr-core-title-font"><a href=../2018/11/07/xe-entertainment-brings-you-new-experience-of-fun/index.html>XE Entertainment Brings You New Experience of Fun</a></div>
+                                            <div class=gdlr-core-recent-post-widget-info><span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlrupload/avatar.jpeg'  class='avatar avatar-50 photo' height=50 width=50><a href=../author/author4/index.html title="Posts by Kally Gordon" rel=author>Kally Gordon</a></span><span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-date"><a href=../2018/11/07/index.html>November 7, 2018</a></span></div>
+                                        </div>
+                                    </div> #}
+                                </div>
+                            </div>
+                            {# <div id=gdlr-core-instagram-widget-2 class="widget widget_gdlr-core-instagram-widget akea-widget">
+                                <h3 class="akea-widget-title"><span class=akea-widget-head-text>Instagram</span><span class=akea-widget-head-divider></span></h3><span class=clear></span>
+                                <div class="gdlr-core-instagram-widget clearfix">
+                                    <div class=" gdlr-core-column-20 gdlr-core-column-first gdlr-core-media-image">
+                                        <a class="gdlr-core-lightgallery gdlr-core-js " href="upload/43984881_188819121994766_3216343442474950648_n7d5a.jpg" data-lightbox-group=gdlr-core-img-group-1><img src="upload/43984881_188819121994766_3216343442474950648_n7d5a.jpg" width=150 height=150 alt></a>
+                                    </div>
+                                    <div class=" gdlr-core-column-20 gdlr-core-media-image">
+                                        <a class="gdlr-core-lightgallery gdlr-core-js " href="upload/45313783_2158345917812845_5821103427645807423_n7d5a.jpg" data-lightbox-group=gdlr-core-img-group-1><img src="upload/45313783_2158345917812845_5821103427645807423_n7d5a.jpg" width=150 height=150 alt></a>
+                                    </div>
+                                    <div class=" gdlr-core-column-20 gdlr-core-media-image">
+                                        <a class="gdlr-core-lightgallery gdlr-core-js " href="upload/43914986_550843855339634_9131648220594836021_n7d5a.jpg" data-lightbox-group=gdlr-core-img-group-1><img src="upload/43914986_550843855339634_9131648220594836021_n7d5a.jpg" width=150 height=150 alt></a>
+                                    </div>
+                                    <div class=" gdlr-core-column-20 gdlr-core-column-first gdlr-core-media-image">
+                                        <a class="gdlr-core-lightgallery gdlr-core-js " href="upload/44371528_263042657731432_6452096443180721983_n7d5a.jpg" data-lightbox-group=gdlr-core-img-group-1><img src="upload/44371528_263042657731432_6452096443180721983_n7d5a.jpg" width=150 height=150 alt></a>
+                                    </div>
+                                    <div class=" gdlr-core-column-20 gdlr-core-media-image">
+                                        <a class="gdlr-core-lightgallery gdlr-core-js " href="upload/44292623_399451020592905_6536115609442328805_n7d5a.jpg" data-lightbox-group=gdlr-core-img-group-1><img src="upload/44292623_399451020592905_6536115609442328805_n7d5a.jpg" width=150 height=150 alt></a>
+                                    </div>
+                                    <div class=" gdlr-core-column-20 gdlr-core-media-image">
+                                        <a class="gdlr-core-lightgallery gdlr-core-js " href="upload/44898222_267175490542576_6183516087002698981_n7d5a.jpg" data-sub-html="So blue" data-lightbox-group=gdlr-core-img-group-1><img src="upload/44898222_267175490542576_6183516087002698981_n7d5a.jpg" width=150 height=150 alt="So blue"></a>
+                                    </div>
+                                </div>
+                            </div> #}
+                        </div>
+                    </div>
+                </div>
+            </div>
 {% endblock %}

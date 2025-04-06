@@ -3,52 +3,59 @@
                 <div class="akea-footer-container akea-container clearfix">
                     <div class="akea-footer-column akea-item-pdlr akea-column-20">
                         <div id=text-2 class="widget widget_text akea-widget">
-                            <h3 class="akea-widget-title"><span class=akea-widget-head-text>Akea, blogger</span><span class=akea-widget-head-divider></span></h3><span class=clear></span>
+                            <h3 class="akea-widget-title"><span class=akea-widget-head-text>{{ domainData.SITE_CONFIGURATIONS.foot_name.value|raw }}</span><span class=akea-widget-head-divider></span></h3><span class=clear></span>
                             <div class=textwidget>
-                                <p>23 King Street, 5th Avenue, New York
+                                <p>{{ domainData.SITE_CONFIGURATIONS.foot_address.value }}
                                     <br> <span class=gdlr-core-space-shortcode id="span_2207_6"></span>
-                                    <br> +1-2355-3345-5
+                                    <br> {{ domainData.SITE_CONFIGURATIONS.telephone.value }}
                                     <br> <span class=gdlr-core-space-shortcode id="span_2207_7"></span>
-                                    <br> <a id="a_2207_30" href=mailto:call@akeablog.co>call@akeablog.co</a></p>
+                                    <br> <a id="a_2207_30" href=mailto:{{ domainData.SITE_CONFIGURATIONS.email.value }}>{{ domainData.SITE_CONFIGURATIONS.email.value }}</a></p>
                             </div>
                         </div>
                     </div>
                     <div class="akea-footer-column akea-item-pdlr akea-column-20">
                         <div id=gdlr-core-custom-menu-widget-2 class="widget widget_gdlr-core-custom-menu-widget akea-widget">
-                            <h3 class="akea-widget-title"><span class=akea-widget-head-text>Category</span><span class=akea-widget-head-divider></span></h3><span class=clear></span>
+                            <h3 class="akea-widget-title"><span class=akea-widget-head-text>Kategorie</span><span class=akea-widget-head-divider></span></h3><span class=clear></span>
                             <div class=menu-category-container>
                                 <ul id=menu-category class="gdlr-core-custom-menu-widget gdlr-core-menu-style-half">
-                                    <li class="menu-item"><a href=#>Technology</a></li>
-                                    <li class="menu-item"><a href=#>Photography</a></li>
-                                    <li class="menu-item"><a href=#>Travel</a></li>
-                                    <li class="menu-item"><a href=#>Fashion</a></li>
-                                    <li class="menu-item"><a href=#>Food</a></li>
-                                    <li class="menu-item"><a href=#>Trending</a></li>
+                                {% for footNav in pureNavigation[0] %}
+                                    <li class="menu-item"><a href="{{ domainData.SITE_WEB }}/{{ footNav.url }}" title="{{ footNav.meta.title }}" >{{ footNav.title }}</a></li>
+                                {% endfor %}
                                 </ul>
                             </div>
                         </div>
                     </div>
                     <div class="akea-footer-column akea-item-pdlr akea-column-20">
                         <div id=text-3 class="widget widget_text akea-widget">
-                            <h3 class="akea-widget-title"><span class=akea-widget-head-text>Follow Us</span><span class=akea-widget-head-divider></span></h3><span class=clear></span>
+                            <h3 class="akea-widget-title"><span class=akea-widget-head-text>Sledujte nás</span><span class=akea-widget-head-divider></span></h3><span class=clear></span>
                             
                             <div class=textwidget>
                                 <div class="gdlr-core-social-network-item gdlr-core-item-pdb  gdlr-core-none-align" id="div_2207_16">
-                                    <a href=# target=_blank class=gdlr-core-social-network-icon title=facebook id="a_2207_31" rel="noopener noreferrer">
+                                    {% if domainData.SITE_CONFIGURATIONS.facebook_url.value is not empty %}
+                                    <a href="{{ domainData.SITE_CONFIGURATIONS.facebook_url.value }}" target=_blank class=gdlr-core-social-network-icon title=facebook id="a_2207_31" rel="noopener noreferrer"  style="text-decoration: none;">
                                         <i class="fa fa-facebook" ></i>
                                     </a>
-                                    <a href=# target=_blank class=gdlr-core-social-network-icon title=pinterest id="a_2207_32" rel="noopener noreferrer">
+                                    {% endif %}
+                                    {% if domainData.SITE_CONFIGURATIONS.pinterest_url.value is not empty %}
+                                    <a href="{{ domainData.SITE_CONFIGURATIONS.pinterest_url.value }}" target=_blank class=gdlr-core-social-network-icon title=pinterest id="a_2207_32" rel="noopener noreferrer" style="text-decoration: none;">
                                         <i class="fa fa-pinterest-p" ></i>
                                     </a>
-                                    <a href=# target=_blank class=gdlr-core-social-network-icon title=skype id="a_2207_33" rel="noopener noreferrer">
-                                        <i class="fa fa-skype" ></i>
-                                    </a>
-                                    <a href=# target=_blank class=gdlr-core-social-network-icon title=twitter id="a_2207_34" rel="noopener noreferrer">
+                                    {% endif %}
+                                    {% if domainData.SITE_CONFIGURATIONS.twitter_url.value is not empty %}
+                                    <a href="{{ domainData.SITE_CONFIGURATIONS.twitter_url.value }}" target=_blank class=gdlr-core-social-network-icon title=twitter id="a_2207_34"  rel="noopener noreferrer" style="text-decoration: none;">
                                         <i class="fa fa-twitter" ></i>
                                     </a>
-                                    <a href=# target=_blank class=gdlr-core-social-network-icon title=instagram id="a_2207_35" rel="noopener noreferrer">
+                                    {% endif %}
+                                    {% if domainData.SITE_CONFIGURATIONS.instagram_url.value is not empty %}
+                                    <a href="{{ domainData.SITE_CONFIGURATIONS.instagram_url.value }}" target=_blank class=gdlr-core-social-network-icon title=instagram id="a_2207_35" rel="noopener noreferrer" style="text-decoration: none;">
                                         <i class="fa fa-instagram" ></i>
                                     </a>
+                                    {% endif %}
+                                    {% if domainData.SITE_CONFIGURATIONS.linkedin_url.value is not empty %}
+                                    <a href="{{ domainData.SITE_CONFIGURATIONS.linkedin_url.value }}" target=_blank class=gdlr-core-social-network-icon title=instagram id="a_2207_35" rel="noopener noreferrer" style="text-decoration: none;">
+                                        <i class="fa fa-linkedin" ></i>
+                                    </a>
+                                    {% endif %}
                                 </div>
                             </div>
                         </div>
@@ -57,13 +64,11 @@
             </div>
             <div class=akea-copyright-wrapper>
                 <div class="akea-copyright-container akea-container clearfix">
-                    <div class="akea-copyright-left akea-item-pdlr">Copyright 2019 Akea Blog, All Right Reserved</div>
+                    <div class="akea-copyright-left akea-item-pdlr">{{ domainData.SITE_CONFIGURATIONS.copyright.value|raw }}</div>
                     <div class="akea-copyright-right akea-item-pdlr">
-                        <a href=index.html >Home</a>
-                        <a href=about-us.html >About</a>
-                        <a href=# >Updates</a>
-                        <a href=# >Advertising</a>
-                        <a href=contact.html >Contact</a>
+                    {% for footNav in pureNavigation[4] %}
+                        <a href="{{ domainData.SITE_WEB }}/{{ footNav.url }}" title="{{ footNav.meta.title }}" >{{ footNav.title }}</a>
+                    {% endfor %}
                     </div>
                 </div>
             </div>
@@ -74,7 +79,7 @@
 <div class="akea-footer-recent-post-bar " id=akea-footer-recent-post-bar>
     <div class=akea-footer-recent-post-bar-close><i class=icon_minus-06></i></div>
     <div class="akea-footer-recent-post-bar-container akea-container clearfix">
-        <h3 class="akea-footer-recent-post-bar-title">My New Stories</h3>
+        <h3 class="akea-footer-recent-post-bar-title">{{ domainData.SITE_CONFIGURATIONS.new_stories.value }}</h3>
         <div class="akea-recent-post-bar-wrap clearfix">
             <div class=akea-recent-post-bar-item>
                 <div class=akea-recent-post-bar-shadow></div>
@@ -147,12 +152,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // Definice fragmentu kódu, který chceme vložit
     var newMenuItemHtml = `<li class="akea-center-nav-menu-item">
                                 <div class="akea-above-logo">
-                                    <a href="index.html"><img src="https://storage.cloud.google.com/mini-web/doctetese.cz/logo_doctetese.svg" alt="" width="348" height="252" title="logo-1"></a>
+                                    <a href="{{ domainData.SITE_WEB }}"><img src="{{ domainData.SITE_CONFIGURATIONS.logo_velke.value }}" alt="" width="348" height="252" title="logo-1"></a>
                                 </div>
                                 <div class="akea-logo akea-item-pdlr">
-                                    <!--<div class="akea-logo-inner">
-                                        <a href="index.html"><img src="https://doctetese.cz/templates/doctetese.cz/upload/logo-2-1.png" alt="" width="140" height="33" title="logo-2"></a>
-                                    </div>-->
+                                    <div class="akea-logo-inner">
+                                        <a href="{{ domainData.SITE_WEB }}"><img src="{{ domainData.SITE_CONFIGURATIONS.logo_male.value }}" alt="" width="140" height="33" title="logo-2"></a>
+                                    </div>
                                 </div>
                             </li>`;
 
@@ -171,7 +176,30 @@ document.addEventListener('DOMContentLoaded', function() {
     menu.insertBefore(newMenuItem, insertPosition);
 });
 
-</script>
+function shareOnFacebook() {
+            const articleURL = window.location.href; // URL aktuální stránky
+            const facebookShareURL = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(articleURL)}`;
+            window.open(facebookShareURL, 'facebook-share-dialog', 'width=800,height=600');
+            return false;
+        }
 
+        function shareOnTwitter() {
+            const articleURL = window.location.href; // URL aktuální stránky
+            const articleTitle = document.querySelector('h1').innerText; // Titulek článku
+            const twitterShareURL = `https://twitter.com/intent/tweet?url=${encodeURIComponent(articleURL)}&text=${encodeURIComponent(articleTitle)}`;
+            window.open(twitterShareURL, 'twitter-share-dialog', 'width=800,height=600');
+            return false;
+        }
+
+        function shareOnPinterest() {
+            const articleURL = window.location.href; // URL aktuální stránky
+            const articleImage = 'URL_OBRÁZKU'; // URL obrázku článku
+            const articleDescription = document.querySelector('h1').innerText; // Titulek článku jako popis
+            const pinterestShareURL = `https://pinterest.com/pin/create/button/?url=${encodeURIComponent(articleURL)}&media=${encodeURIComponent(articleImage)}&description=${encodeURIComponent(articleDescription)}`;
+            window.open(pinterestShareURL, 'pinterest-share-dialog', 'width=800,height=600');
+            return false;
+        }
+</script>
+{{ domainData.SITE_PRE_END_BODY_CODE|raw }}
 </body>
 </html>
