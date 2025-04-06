@@ -1,6 +1,10 @@
 {% for post in popularArticles %}
     <div class="gdlr-core-recent-post-widget clearfix">
+<<<<<<< HEAD
         <div class="gdlr-core-recent-post-widget-thumbnail gdlr-core-media-image"><img src={{ post.images.images.articleDetail.varianta.galleryThumbnail.public_url }} alt="{{ post.images.images.articleDetail.alt }}" width=150 height=150 title="{{ post.images.images.articleDetail.title }}"></div>
+=======
+        <div class="gdlr-core-recent-post-widget-thumbnail gdlr-core-media-image"><img src={{ post.images.images.articleDetail.varianta.galleryThumbnail.public_url }} alt width=150 height=150 title=qingbao-meng-330658-unsplash></div>
+>>>>>>> b494363 (init)
         <div class=gdlr-core-recent-post-widget-content>
             <div class=gdlr-core-recent-post-widget-title><a href={{ post.url }}>{{ post.title }}</a></div>
             <div class=gdlr-core-recent-post-widget-info>{#<span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-author"><img alt src='https://doctetese.cz/templates/doctetese.cz/upload/avatar.jpeg'  class='avatar avatar-50 photo' height=50 width=50><a href=# title="Posts by Paul Newman" rel=author>Paul Newman</a></span>#}<span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-date"><a href=#>{{ post.publish_at|date("d. m. Y") }}</a></span></div>

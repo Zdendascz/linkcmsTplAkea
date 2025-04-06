@@ -2,6 +2,7 @@
 {% block title %}{{ pageData.categoryInfo.meta.title }}{% endblock %}
 {% block description %}{{ pageData.categoryInfo.meta.description }}{% endblock %}
 {% block keywords %}{{ pageData.categoryInfo.meta.keywords }}{% endblock %}
+<<<<<<< HEAD
 
 {% block author %}{{ domainData.domain.meta_autor }}{% endblock %}
 
@@ -35,6 +36,8 @@
 </script>
 {% endblock %}
 
+=======
+>>>>>>> b494363 (init)
 {% block SITE_LANGUAGE %}{{ domainData.SITE_LANGUAGE }}{% endblock %}
 {% block SITE_HEAD_CODE %}{{ domainData.SITE_HEAD_CODE }}{% endblock %}
 {% block SITE_POST_BODY_CODE %}{{ domainData.SITE_POST_BODY_CODE }}{% endblock %}
@@ -44,6 +47,7 @@
 {% block nadpis %}{{ displayData.title }}{% endblock %}
 
 {% block titleBlok %}
+<<<<<<< HEAD
 <div class="akea-page-title-wrap  akea-style-custom akea-center-align" style="background-image: none;">
             <div class=akea-header-transparent-substitute></div>
             <div class=akea-page-title-overlay></div>
@@ -221,4 +225,35 @@
                     </div>
                 </div>
             </div>
+=======
+{{ path.title }}
+{% endblock %}
+
+{% block obsah %}
+<!-- Start Blog Section -->
+  <section id="blog">
+    <div class="st-height-b100 st-height-lg-b80"></div>
+    <div class="container">
+      <div class="st-section-heading st-style1">
+        <h4 class="st-section-heading-title">BLOG</h4>
+        <h2 class="st-section-heading-subtitle">VŠE O SEO</h2>
+      </div>
+      <div class="st-height-b25 st-height-lg-b25"></div>
+    </div>
+    
+    <div class="container">
+      <!-- Použijeme klasický grid pro tři sloupce -->
+      <div class="row"> <!-- Nebo použij vlastní grid systém, pokud nechceš používat bootstrap -->
+        {% for post in displayData %}
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            {% include 'inc/categoryPost.twig' %} <!-- Zobrazení příspěvku -->
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+    
+    <div class="st-height-b95 st-height-lg-b75"></div>
+  </section>
+  <!-- End Blog Section -->
+>>>>>>> b494363 (init)
 {% endblock %}

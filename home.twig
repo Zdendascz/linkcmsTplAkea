@@ -1,4 +1,5 @@
 {% extends "index.twig" %}
+<<<<<<< HEAD
 {% block title %}{{ pageData.categoryInfo.meta.title }}{% endblock %}
 {% block description %}{{ pageData.categoryInfo.meta.description }}{% endblock %}
 {% block keywords %}{{ pageData.categoryInfo.meta.keywords }}{% endblock %}
@@ -19,6 +20,11 @@
 
 
 
+=======
+{% block title %}{{ displayData.meta.title }}{% endblock %}
+{% block description %}{{ displayData.meta.description }}{% endblock %}
+{% block keywords %}{{ displayData.meta.keywords }}{% endblock %}
+>>>>>>> b494363 (init)
 {% block SITE_LANGUAGE %}{{ domainData.SITE_LANGUAGE }}{% endblock %}
 {% block SITE_HEAD_CODE %}{{ domainData.SITE_HEAD_CODE }}{% endblock %}
 {% block SITE_POST_BODY_CODE %}{{ domainData.SITE_POST_BODY_CODE }}{% endblock %}
@@ -67,6 +73,7 @@
                                                     <a class="page-numbers" href="{{ modify_query(actualUrl, {'articlesPage': i}) }}">{{ i }}</a>
                                                 {% endif %}
                                             {% endfor %}
+<<<<<<< HEAD
 
                                             {% if currentPage > 1 %}
                                                 <a class="prev page-numbers" rel="prev" href="{{ modify_query(actualUrl, {'articlesPage': currentPage - 1}) }}">Previous</a>
@@ -74,6 +81,11 @@
 
                                             {% if currentPage < displayData.totalPages %}
                                                 <a class="next page-numbers" rel="next" href="{{ modify_query(actualUrl, {'articlesPage': currentPage + 1}) }}">Next</a>
+=======
+                                            
+                                            {% if currentPage < displayData.totalPages %}
+                                                <a class="next page-numbers" href="{{ modify_query(actualUrl, {'articlesPage': currentPage + 1}) }}">Next</a>
+>>>>>>> b494363 (init)
                                             {% endif %}
                                         </div>
                                     </div>

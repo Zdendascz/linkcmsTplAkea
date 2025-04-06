@@ -1,0 +1,63 @@
+{% extends "index.twig" %}
+{% block title %}{{ displayData.meta.title }}{% endblock %}
+{% block description %}{{ displayData.meta.description }}{% endblock %}
+{% block keywords %}{{ displayData.meta.keywords }}{% endblock %}
+
+{% block author %}{{ domainData.domain.meta_autor }}{% endblock %}
+
+{% block og_title %}{{ displayData.meta.title }}{% endblock %}
+{% block og_description %}{{ displayData.meta.description }}{% endblock %}
+{% block og_image %}{{ displayData.images.images.articleDetail.varianta.galleryThumbnail.public_url }}{% endblock %}
+{% block og_url %}{{ actualUrl }}{% endblock %}
+{% block og_content_type %}website{% endblock %}
+
+{% block twitter_account %}{{ domainData.domain.twitter_account }}{% endblock %}
+{% block twitter_type %}summary_large_image{% endblock %}
+{% block twitter_title %}{{ displayData.meta.title }}{% endblock %}
+{% block twitter_image %}{{ displayData.images.images.articleDetail.varianta.galleryThumbnail.public_url }}{% endblock %}
+{% block twitter_description %}{{ displayData.meta.description }}{% endblock %}
+
+{% block SITE_LANGUAGE %}{{ domainData.SITE_LANGUAGE }}{% endblock %}
+{% block SITE_HEAD_CODE %}{{ domainData.SITE_HEAD_CODE }}{% endblock %}
+{% block SITE_POST_BODY_CODE %}{{ domainData.SITE_POST_BODY_CODE }}{% endblock %}
+{% block SITE_PRE_END_BODY_CODE %}{{ domainData.SITE_PRE_END_BODY_CODE }}{% endblock %}
+
+{% set display_date = post.last_modified_at == '' ? post.last_modified_at : post.publish_at %}
+
+{% block jsonld %}
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "{{ displayData.meta.title }}",
+      "author": {
+        "@type": "Organization",
+        "name": "{{ domainData.domain.meta_autor }}"
+      },
+      "datePublished": "{{ post.publish_at|date("Y-m-d") }}",
+      "dateModified": "{{ display_date|date("Y-m-d") }}",
+      "description": "{{ displayData.snippet }}",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{ actualUrl }}"
+      },
+      "image": "{{ displayData.images.images.articleDetail.varianta.articleDetail.public_url }}",
+      "publisher": {
+        "@type": "{{ domainData.domain.publisher_type }}",
+        "name": "{{ domainData.domain.publisher_name }}",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "{{ domainData.domain.publisher_logo }}"
+        }
+      }
+    }
+    </script>
+{% endblock %}
+
+
+{% block nadpis %}{{ displayData.title }}{% endblock %}
+
+
+{% block obsah %}
+{{ displayData.body|raw }}
+{% endblock %}

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
         <footer>
             <div class="akea-footer-wrapper ">
                 <div class="akea-footer-container akea-container clearfix">
@@ -203,3 +204,187 @@ function shareOnFacebook() {
 {{ domainData.SITE_PRE_END_BODY_CODE|raw }}
 </body>
 </html>
+=======
+  
+  <!-- Start Blog Seciton -->
+  <section id="blog">
+    <div class="st-height-b100 st-height-lg-b80"></div>
+    <div class="container">
+      <div class="st-section-heading st-style1">
+        <h4 class="st-section-heading-title">BLOG</h4>
+        <h2 class="st-section-heading-subtitle">NEJNOVĚJŠÍ</h2>
+      </div>
+      <div class="st-height-b25 st-height-lg-b25"></div>
+    </div>
+
+    <!-- Latest News Container -->
+
+    <div class="container">
+      <div class="st-slider st-style2">
+        <div class="slick-container" data-autoplay="0" data-loop="1" data-speed="600" data-center="0"
+          data-slides-per-view="responsive" data-xs-slides="1" data-sm-slides="2" data-md-slides="3"
+          data-lg-slides="3" data-add-slides="3">
+          <div class="slick-wrapper">
+          {% for post in newArticles %}
+            <div class="slick-slide-in">
+              <div class="st-post-single st-style1">
+                <a href="{{ post.url }}" class="st-post-thumb st-zoom">
+                  <img src="{{ post.images.images.articleDetail.varianta.galleryThumbnail.public_url }}" class="st-zoom-in" alt="blog3">
+                </a>
+                <div class="st-post-info">
+                  <div class="st-post-date">
+                    Napsal:
+                    <a href="#" class="st-post-author">Zdeněk</a>
+                    <span class="st-post-date-divider">|</span>
+                    <span class="st-post-publish-date">{{ post.publish_at|date("d. m. Y") }}</span>
+                  </div>
+                  <h4 class="st-post-title"><a href="{{ post.url }}">{{ post.title }}</a></h4>
+                </div>
+              </div>
+            </div><!-- .slick-slide-in -->
+          {% endfor %}  
+            
+          </div>
+        </div><!-- .slick-container -->
+        <div class="pagination st-style1 st-flex"></div>
+        <!-- If dont need Pagination then add class .st-hidden -->
+      </div><!-- .st-slider -->
+    </div>
+    <div class="row">
+        <div class="col-lg-12 text-center">
+          <div class="st-portfolio-btn">
+            <a href="http://loc-dom2.cz/blog/" id="loadPortfolio" class="st-btn st-style1 st-color1">Více článků z blogu</a>
+          </div>
+        </div>
+      </div>
+    <div class="st-height-b95 st-height-lg-b75"></div>
+  </section>
+  <!-- End Blog Seciton -->
+
+  <!-- Start Contact Seciton -->
+  <section id="contact" class="st-dark-bg">
+    <div class="st-height-b100 st-height-lg-b80"></div>
+    <div class="container">
+      <div class="st-section-heading st-style1">
+        <h4 class="st-section-heading-title">KONTAKTUJTE MNE</h4>
+        <h2 class="st-section-heading-subtitle">KONTAKTUJTE MNE</h2>
+      </div>
+      <div class="st-height-b25 st-height-lg-b25"></div>
+    </div>
+
+    <!-- Contact Container -->
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <h3 class="st-contact-title">Prostě jen napište...</h3>
+          <div id="st-alert"></div>
+          <form action="/submitForm" method="POST" class="st-contact-form" id="contact-form">
+            <input type="hidden" name="form_id" value="1"> <!-- ID formuláře -->
+            <div class="st-form-field">
+              <input type="text" id="email" name="email" placeholder="Váš email" required>
+            </div>
+            <div class="st-form-field">
+              <textarea cols="30" rows="10" id="msg" name="msg" placeholder="Vaše zpráva" required></textarea>
+            </div>
+            <!-- Skrytý input pro uložení tokenu -->
+            <!-- <input type="hidden" id="recaptcha-token" name="g-recaptcha-response"> -->
+            <button class="st-btn st-style1 st-color1 g-recaptcha" type="submit" id="submit" name="submit" data-sitekey="6LdJXWAqAAAAAO9xakmUctOwL9Z9jjDxSpeaaHuL"
+            data-callback='onSubmit'
+            data-action='mailsend'>Odeslat zprávu</button>
+          </form>
+        </div>
+        <div class="st-height-b0 st-height-lg-b30"></div>
+
+        <div class="col-lg-6">
+          <div class="st-height-b0 st-height-lg-b40"></div>
+          <h3 class="st-contact-title">Kontaktní informace</h3>
+          <div class="st-contact-text">
+            Napište mi, sejdeme se, nebo dáme webcall a nezávazně si popovídáme o tom, co potřebujete řešit. Podle toho zjistíme, jestli má spolupráce smysl.
+          </div>
+          <div class="st-contact-info-wrap">
+            <div class="st-single-contact-info">
+              <i class="fas fa-envelope"></i>
+              <div class="st-single-info-details">
+                <h4>Email</h4>
+                <a href="mailto:jsem@seo-master.cz">jsem@seo-master.cz</a>
+                <a href="mailto:zdenek.klusak@gmail.com">zdenek.klusak@gmail.com</a>
+              </div>
+            </div>
+            <div class="st-single-contact-info">
+              <i class="fas fa-phone-alt"></i>
+              <div class="st-single-info-details">
+                <h4>Telefon</h4>
+                <span><a href="tel:+420732182694">+420 732 182 694</a></span>
+              </div>
+            </div>
+            <div class="st-single-contact-info">
+              <i class="fas fa-map-marker-alt"></i>
+              <div class="st-single-info-details">
+                <h4>Adresa</h4>
+                <span>Rašov 15 <br>Rašov, 679 23</span>
+              </div>
+            </div>
+            <div class="st-social-info">
+              <div class="st-social-text">Podívejte se na mé sociální sítě</div>
+              <div class="st-social-link">
+                <a href="#" class="st-social-btn active">
+                  <span class="st-social-icon"><i class="fab fa-dribbble"></i></span>
+                  <span class="st-icon-name">Dribbble</span>
+                </a>
+                <a href="#" class="st-social-btn">
+                  <span class="st-social-icon"><i class="fab fa-behance"></i></span>
+                  <span class="st-icon-name">Behance</span>
+                </a>
+                <a href="#" class="st-social-btn">
+                  <span class="st-social-icon"><i class="fab fa-twitter"></i></span>
+                  <span class="st-icon-name">Twitter</span>
+                </a>
+                <a href="#" class="st-social-btn">
+                  <span class="st-social-icon"><i class="fab fa-linkedin"></i></span>
+                  <span class="st-icon-name">LinkedIn</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="st-height-b100 st-height-lg-b80"></div>
+  </section>
+  <!-- End Contact Seciton -->
+
+  <!-- Start Footer Seciton -->
+  <footer>
+    <div class="container">
+      <div class="st-copyright-wrap text-center">
+        <div class="st-copyright-text">© 2020. Designed by Laralink. All right reserved.</div>
+      </div>
+    </div>
+  </footer>
+  <!-- End Footer Seciton -->
+
+  <!-- Scripts -->
+  <script src="{{ domainData.SITE_WEB }}/{{ domainData.SITE_TEMPLATE_DIR }}assets/js/jquery-1.12.4.min.js"></script>
+  <script src="{{ domainData.SITE_WEB }}/{{ domainData.SITE_TEMPLATE_DIR }}assets/js/jquery.slick.min.js"></script>
+  <script src="{{ domainData.SITE_WEB }}/{{ domainData.SITE_TEMPLATE_DIR }}assets/js/lightgallery.min.js"></script>
+  <script src="{{ domainData.SITE_WEB }}/{{ domainData.SITE_TEMPLATE_DIR }}assets/js/wow.min.js"></script>
+  <script src="{{ domainData.SITE_WEB }}/{{ domainData.SITE_TEMPLATE_DIR }}assets/js/ripples.min.js"></script>
+  <script src="{{ domainData.SITE_WEB }}/{{ domainData.SITE_TEMPLATE_DIR }}assets/js/particles.min.js"></script>
+  <script src="{{ domainData.SITE_WEB }}/{{ domainData.SITE_TEMPLATE_DIR }}assets/js/main.js"></script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+<script>
+    function onSubmit(token) {
+        // Nastav token do skrytého inputu, aby mohl být odeslán na server
+        document.getElementById('recaptcha-token').value = token;
+        // Odeslání formuláře
+        document.getElementById('contact-form').submit();
+    }
+</script>
+
+<script src="https://www.google.com/recaptcha/enterprise.js?render=6LdJXWAqAAAAAO9xakmUctOwL9Z9jjDxSpeaaHuL"></script>
+
+</body>
+</html>
+>>>>>>> b494363 (init)
